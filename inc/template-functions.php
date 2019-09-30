@@ -96,7 +96,7 @@ function luzdelaluna_excerpt_more( $link ) {
 	if ( get_theme_mod( 'more_link' ) ) {
 		$link  = '...';
 		$link .= sprintf(
-			'<p><a href="%1$s" class="more-link btn btn-primary">%2$s</a></p>',
+			'<p><a href="%1$s" class="more-link">%2$s</a></p>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %2$s: Name of current post */
 			sprintf( __( '%1$s<span class="screen-reader-text">%2$s</span>', 'luzdelaluna' ), esc_html( get_theme_mod( 'more_link' ) ), get_the_title( get_the_ID() ) )
@@ -146,21 +146,6 @@ function luzdelaluna_posts_link_attributes() {
 add_filter( 'next_posts_link_attributes', 'luzdelaluna_posts_link_attributes' );
 add_filter( 'previous_posts_link_attributes', 'luzdelaluna_posts_link_attributes' );
 
-/**
- * Comment form container.
- */
-function luzdelaluna_comment_form_wrap_start() {
-	echo '<div class="card my-4"><div class="card-body">';
-}
-
-/**
- * Comment form wrapper.
- */
-function luzdelaluna_comment_form_wrap_end() {
-	echo '</div></div>';
-}
-add_action( 'comment_form_after', 'luzdelaluna_comment_form_wrap_end' );
-add_action( 'comment_form_before', 'luzdelaluna_comment_form_wrap_start' );
 
 /**
  * Add custom class to comment reply link.
@@ -168,7 +153,7 @@ add_action( 'comment_form_before', 'luzdelaluna_comment_form_wrap_start' );
  * @param string $content comment reply link class.
  */
 function luzdelaluna_comment_reply_link( $content ) {
-	$extra_classes = 'btn btn-primary';
+	$extra_classes = 'btn-uni';
 	return preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $extra_classes, $content );
 }
 add_filter( 'comment_reply_link', 'luzdelaluna_comment_reply_link', 99 );

@@ -1,2 +1,2 @@
-# luzdelaluna
-Simple shop theme
+# Luzdelaluna
+simple shop theme

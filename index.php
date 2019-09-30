@@ -23,35 +23,34 @@ if ( is_home() ) {
 }
 ?>
 
-
 <div class="container">
-	<div class="row">
+    <div class="row">
 
-		<div id="primary" class="content-area<?php luzdelaluna_content_class(); ?>">
-		<main id="main" class="site-main" role="main">
+        <div id="primary" class="content-area<?php luzdelaluna_content_class(); ?>">
+            <main id="main" class="site-main" role="main">
 
-	<?php
+                <?php
 	if ( have_posts() ) :
 
 		if ( is_home() && ! is_front_page() ) :
 			?>
-				<header>
-					<h1 class="page-title screen-reader-text">
-					<?php single_post_title(); ?>
-					</h1>
-				</header>
-			<?php
+                <!-- <header>
+                    <h1 class="page-title screen-reader-text">
+                        <?php //single_post_title(); ?>
+                    </h1>
+                </header> -->
+                <?php
 			endif;
 
 		if ( is_archive() ) :
 			?>
-				<header class="archive-header pb-4">
-				<?php
+                <header class="archive-header pb-4">
+                    <?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-				</header>
-			<?php
+                </header>
+                <?php
 			endif;
 
 		/* Start the Loop */
@@ -85,15 +84,15 @@ if ( is_home() ) {
 		endif;
 		?>
 
-		</main>
-		</div><!-- #primary -->
+            </main>
+        </div><!-- #primary -->
 
-<?php
+        <?php
 	/* Get Sidebar #secondary */
 	get_sidebar();
 ?>
 
-	</div><!-- /.row -->
+    </div><!-- /.row -->
 </div><!-- /.container -->
 
 <?php

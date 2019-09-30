@@ -37,10 +37,7 @@ if ( ! function_exists( 'luzdelaluna_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function luzdelaluna_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
+		$time_string = '<i class="far fa-calendar-alt"></i> <time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf(
 			$time_string,
@@ -52,12 +49,11 @@ if ( ! function_exists( 'luzdelaluna_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'luzdelaluna' ),
+			esc_html_x( ' %s', 'post date', 'luzdelaluna' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
 	}
 endif;
 
@@ -68,11 +64,11 @@ if ( ! function_exists( 'luzdelaluna_posted_by' ) ) :
 	function luzdelaluna_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'luzdelaluna' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html_x( ' %s', 'post author', 'luzdelaluna' ),
+			'<a class="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"><i class="fas fa-user"></i> ' . $byline; // WPCS: XSS OK.
 
 	}
 endif;
@@ -88,34 +84,15 @@ if ( ! function_exists( 'luzdelaluna_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'luzdelaluna' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'luzdelaluna' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'luzdelaluna' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'luzdelaluna' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'luzdelaluna' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'luzdelaluna' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'luzdelaluna' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
 		}
 
 		edit_post_link(
@@ -149,61 +126,62 @@ if ( ! function_exists( 'luzdelaluna_comment' ) ) :
 	function luzdelaluna_comment( $comment, $args, $depth ) {
 		if ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type ) : ?>
 
-			<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
-			<div class="comment-body">
-				<?php esc_html_e( 'Pingback:', 'luzdelaluna' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'luzdelaluna' ), '<span class="edit-link">', '</span>' ); ?>
-			</div>
+<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
+    <div class="comment-body">
+        <?php esc_html_e( 'Pingback:', 'luzdelaluna' ); ?> <?php comment_author_link(); ?>
+        <?php edit_comment_link( __( 'Edit', 'luzdelaluna' ), '<span class="edit-link">', '</span>' ); ?>
+    </div>
 
-			<?php
+    <?php
 		else :
 			?>
 
-			<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body media mb-4">
-				<a class="pull-left" href="#">
-					<?php
+<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+    <article id="div-comment-<?php comment_ID(); ?>" class="comment-body media mb-4">
+        <a class="pull-left" href="#">
+            <?php
 					if ( 0 !== $args['avatar_size'] ) {
 						echo get_avatar( $comment, $args['avatar_size'], '', '', array( 'class' => 'rounded-circle' ) );}
 					?>
-				</a>
+        </a>
 
-				<div class="media-body">
-					<div class="media-body-wrap card">
-						<div class="card-header">
-							/* translators: %s: comment author link */
-							<h5 class="mt-0">
-							<?php
+        <div class="media-body">
+            <div class="media-body-wrap card">
+                <div class="card-header">
+                    <h5 class="mt-0">
+                        <?php
 							printf( /* translators: %s: comment author link */
-								esc_html__( '%s <span class="says">says:</span>', 'luzdelaluna' ),
+								__( '%s <span class="says">says:</span>', 'luzdelaluna' ),
 								sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 							);
 							?>
-								</h5>
-							<div class="comment-meta">
-								<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-									<time datetime="<?php comment_time( 'c' ); ?>">
-										<?php
+                    </h5>
+                    <div class="comment-meta">
+                        <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+                            <time datetime="<?php comment_time( 'c' ); ?>">
+                                <?php
 										printf( /* translators: %s: comment time */
 											esc_html_x( '%1$s at %2$s', '1: date, 2: time', 'luzdelaluna' ),
 											get_comment_date(),
 											get_comment_time()
 										); // WPCS: XSS OK.
 										?>
-									</time>
-								</a>
-								<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', 'luzdelaluna' ), '<span class="edit-link">', '</span>' ); ?>
-							</div>
-						</div>
+                            </time>
+                        </a>
+                        <?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', 'luzdelaluna' ), '<span class="edit-link">', '</span>' ); ?>
+                    </div>
+                </div>
 
-						<?php if ( '0' === $comment->comment_approved ) : ?>
-							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'luzdelaluna' ); ?></p>
-						<?php endif; ?>
+                <?php if ( '0' === $comment->comment_approved ) : ?>
+                <p class="comment-awaiting-moderation">
+                    <?php esc_html_e( 'Your comment is awaiting moderation.', 'luzdelaluna' ); ?></p>
+                <?php endif; ?>
 
-						<div class="comment-content card-block">
-							<?php comment_text(); ?>
-						</div><!-- .comment-content -->
+                <div class="comment-content card-block">
+                    <?php comment_text(); ?>
+                </div><!-- .comment-content -->
 
-						<?php
+                <?php
 						$args = array();
 						comment_reply_link(
 							array_merge(
@@ -219,13 +197,13 @@ if ( ! function_exists( 'luzdelaluna_comment' ) ) :
 						);
 						?>
 
-					</div>
-				</div><!-- .media-body -->
+            </div>
+        </div><!-- .media-body -->
 
-			</article>
-			</li>
+    </article>
+</li>
 
-			<?php
+<?php
 		endif;
 	}
 endif;
@@ -287,7 +265,7 @@ function luzdelaluna_set_content_class( $class = '' ) {
 	// Define classes array.
 	$classes = array();
 
-	$classes[] = 'col-md-8';
+	$classes[] = 'col-lg-8';
 
 	// Centered.
 	if ( ! is_active_sidebar( 'sidebar-1' ) || get_theme_mod( 'sidebar_position' ) === 'none' ) {

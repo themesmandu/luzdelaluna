@@ -10,27 +10,28 @@
 get_header();
 ?>
 
-<div class="container">
+<section class="section-search">
+    <div class="container">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
 
-		<?php
+                <?php
 		if ( have_posts() ) :
 			?>
 
-			<header class="page-header pb-4">
-				<h1 class="page-title">
-					<?php
+                <header class="page-header pb-4">
+                    <h1 class="page-title">
+                        <?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'luzdelaluna' ), '<span>' . get_search_query() . '</span>' );
 					?>
-				</h1>
-			</header><!-- .page-header -->
+                    </h1>
+                </header><!-- .page-header -->
 
-			<ul class="search-results list-group list-group-flush pb-4">
+                <ul class="search-results list-group list-group-flush pb-4">
 
-			<?php
+                    <?php
 				/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -45,19 +46,20 @@ get_header();
 				endwhile;
 			?>
 
-			</ul>
+                </ul>
 
-			<?php
+                <?php
 			the_posts_navigation();
 			else :
 				get_template_part( 'template-parts/content', 'none' );
 		endif;
 			?>
 
-		</main>
-	</div><!-- #primary -->
+            </main>
+        </div><!-- #primary -->
 
-</div><!-- /.container -->
+    </div><!-- /.container -->
+</section><!-- /.section-search -->
 
 <?php
 get_footer();

@@ -51,6 +51,7 @@ if ( ! function_exists( 'luzdelaluna_setup' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => esc_html__( 'Primary', 'luzdelaluna' ),
+				'footer-menu' => esc_html__( 'Footer Menu', 'luzdelaluna' ),
 			)
 		);
 
@@ -144,6 +145,21 @@ function luzdelaluna_widgets_init() {
 			'after_title'   => '</h5>',
 		)
 	);
+
+	for ( $i = 1; $i <= 3; $i++ ) {
+		register_sidebar(
+			array(
+				/* translators: %d: footer widget number. */
+				'name'          => sprintf( esc_html__( 'Footer Widgets %d', 'luzdelaluna' ), $i ),
+				'id'            => 'footer-' . $i,
+				'description'   => esc_html__( 'Add widgets here.', 'luzdelaluna' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+	}
 }
 add_action( 'widgets_init', 'luzdelaluna_widgets_init' );
 
@@ -164,6 +180,9 @@ function luzdelaluna_scripts() {
 	// Loading main stylesheet.
 	wp_enqueue_style( 'main-css', get_theme_file_uri( '/assets/css/main.css' ), array( 'luzdelaluna-style' ), wp_get_theme()->get( 'Version' ) );
 
+	// Loading mediascreen stylesheet.
+	wp_enqueue_style( 'mediascreen-css', get_theme_file_uri( '/assets/css/mediascreen.css' ), array( 'luzdelaluna-style' ), wp_get_theme()->get( 'Version' ) );
+
 	// Add font-awesome fonts, used in the main stylesheet.
 	wp_enqueue_style( 'luzdelaluna-font-awesome', get_theme_file_uri( '/assets/font-awesome-5.7.2/css/all.css' ), array( 'luzdelaluna-style' ), '5.7.2' );
 
@@ -175,8 +194,11 @@ function luzdelaluna_scripts() {
 	// Theme added JavaScript: Added by Developers.
 	wp_enqueue_script( 'luzdelaluna-basic', get_template_directory_uri() . '/assets/js/basic.js', array(), wp_get_theme()->get( 'Version' ), true );
 
-	// Font Nunito And Advent Pro
-	wp_enqueue_style( 'luzdelaluna-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Advent+Pro:400,600,700|Nunito:400,600,700&display=swap', false );
+	// Loading slick-slide js.
+	wp_enqueue_script( 'slick-js', get_theme_file_uri( '/assets/js/slick.js' ), array(), '1.0.0', true );
+
+	// Font Montserrat (Google Font)
+	wp_enqueue_style( 'luzdelaluna-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -194,3 +216,6 @@ function wildspirit_add_classes_on_link_attributes( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_link_attributes', 'wildspirit_add_classes_on_link_attributes' );
+
+/** Post Widget with images **/
+require get_template_directory().'/inc/post_widget.php';

@@ -9,13 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>">
 
 <?php
 	the_post_thumbnail(
 		'luzdelaluna-featured-900-600',
 		array(
-			'class' => 'img-fluid rounded mb-2',
+			'class' => 'img-fluid mb-2',
 		)
 	);
 	?>
@@ -23,7 +23,7 @@
 <div class="card-body">
 
 	<header class="entry-header pb-4">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="uppercase clr-blu bold-9">', '</h1>' ); ?>
 	</header>
 
 	<div class="entry-content">

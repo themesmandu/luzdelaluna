@@ -785,8 +785,8 @@ function luzdelaluna_customizer_css() {
 			luzdelaluna_generate_css( '.post .card-body', 'background-color', 'entry_bgcolor' );
 			luzdelaluna_generate_css( '.post .card-footer', 'background-color', 'entry_footer_bgcolor' );
 			luzdelaluna_generate_css( '.widget-title', 'color', 'wgt_title_color' );
-			luzdelaluna_generate_css( '.btn-luzdelaluna', 'background-color', 'luzdelaluna_btn_color' );
-			luzdelaluna_generate_css( '.btn-luzdelaluna:hover', 'background-color', 'luzdelaluna_btn_hover_color' );
+			luzdelaluna_generate_css( '.btn', 'background-color', 'luzdelaluna_btn_color' );
+			luzdelaluna_generate_css( '.btn:hover', 'background-color', 'luzdelaluna_btn_hover_color' );
 			luzdelaluna_generate_css( '#footer', 'background-color', 'footer_bgcolor' );
 			luzdelaluna_generate_css( '#footer', 'color', 'footer_color' );
 		?>

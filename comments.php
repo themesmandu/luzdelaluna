@@ -10,27 +10,28 @@
  * @package Luzdelaluna
  */
 
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
 if ( post_password_required() ) {
-	/*
-	 * If the current post is protected by a password and
-	 * the visitor has not yet entered the password we will
-	 * return early without loading the comments.
-	 */
 	return;
 }
 ?>
 
 <div id="comments" class="comments-area">
 
-	<?php
+    <?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
+    <div class="comment-wrap">
+        <h2 class="comments-title">
+            <?php
 			$luzdelaluna_comment_count = get_comments_number();
 			if ( '1' === $luzdelaluna_comment_count ) {
-				printf(// WPCS: XSS OK.
+				printf( // WPCS: XSS OK.
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'luzdelaluna' ),
 					'<span>' . get_the_title() . '</span>'
@@ -44,40 +45,48 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+        </h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
 
-		<ul class="comment-list">
-			<?php
+        <ol class="comment-list">
+            <?php
 			wp_list_comments(
 				array(
-					'callback'    => 'luzdelaluna_comment',
+					'style'      => 'ol',
+					'short_ping' => true,
 					'avatar_size' => 55,
 				)
 			);
 			?>
-		</ul>
+        </ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+        <div class="comment_pagination">
+            <?php
+		paginate_comments_links(
+			array(
+				'mid_size'  => 2,
+				'prev_text' => '<span class="previous">' . __( 'Prev', 'luzdelaluna' ),
+				'next_text' => '<span class="next">' . __( 'Next', 'luzdelaluna' ),
+			)
+		);
+		?>
+        </div>
 
+        <?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'luzdelaluna' ); ?></p>
-			<?php
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'luzdelaluna' ); ?></p>
+        <?php
 		endif;
 
-	endif; // Check for have_comments().
+		?>
+    </div>
 
-	comment_form(
-		array(
-			'class_form'    => 'comment-form',
-			'class_submit'  => 'btn btn-primary',
-			'comment_field' => '<div class="form-group"><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>',
-		)
-	);
+    <?php
+	endif; // Check for have_comments().
+	
+	comment_form();
 	?>
 
 </div><!-- #comments -->
