@@ -20,7 +20,7 @@ if ( ! class_exists( 'luzdelaluna_ootstrap_Navwalker' ) ) {
 	 *
 	 * @extends Walker_Nav_Menu
 	 */
-	class luzdelaluna_ootstrap_Navwalker extends Walker_Nav_Menu {
+	class Luzdelaluna_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		/**
 		 * Starts the list before the elements are added.

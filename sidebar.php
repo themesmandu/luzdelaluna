@@ -21,7 +21,7 @@ if ( get_theme_mod( 'sidebar_position' ) === 'right' ) {
 ?>
 
 <aside id="sidebar" class="widget-area col-lg-4 <?php echo esc_attr( $luzdelaluna_sidebar_order ); ?>">
-    <div class="sidebar">
-        <?php dynamic_sidebar( 'sidebar-1' ); ?>
-    </div>
+	<div class="sidebar">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
 </aside>

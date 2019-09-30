@@ -50,7 +50,7 @@ if ( ! function_exists( 'luzdelaluna_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary', 'luzdelaluna' ),
+				'primary'     => esc_html__( 'Primary', 'luzdelaluna' ),
 				'footer-menu' => esc_html__( 'Footer Menu', 'luzdelaluna' ),
 			)
 		);
@@ -217,5 +217,3 @@ function wildspirit_add_classes_on_link_attributes( $classes ) {
 }
 add_filter( 'nav_menu_link_attributes', 'wildspirit_add_classes_on_link_attributes' );
 
-/** Post Widget with images **/
-require get_template_directory().'/inc/post_widget.php';

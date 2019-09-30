@@ -22,13 +22,13 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-    <?php
+	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-    <div class="comment-wrap">
-        <h2 class="comments-title">
-            <?php
+	<div class="comment-wrap">
+		<h2 class="comments-title">
+			<?php
 			$luzdelaluna_comment_count = get_comments_number();
 			if ( '1' === $luzdelaluna_comment_count ) {
 				printf( // WPCS: XSS OK.
@@ -45,47 +45,47 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-        </h2><!-- .comments-title -->
+		</h2><!-- .comments-title -->
 
 
-        <ol class="comment-list">
-            <?php
+		<ol class="comment-list">
+			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'style'       => 'ol',
+					'short_ping'  => true,
 					'avatar_size' => 55,
 				)
 			);
 			?>
-        </ol><!-- .comment-list -->
+		</ol><!-- .comment-list -->
 
-        <div class="comment_pagination">
-            <?php
-		paginate_comments_links(
-			array(
-				'mid_size'  => 2,
-				'prev_text' => '<span class="previous">' . __( 'Prev', 'luzdelaluna' ),
-				'next_text' => '<span class="next">' . __( 'Next', 'luzdelaluna' ),
-			)
-		);
-		?>
-        </div>
+		<div class="comment_pagination">
+			<?php
+			paginate_comments_links(
+				array(
+					'mid_size'  => 2,
+					'prev_text' => '<span class="previous">' . __( 'Prev', 'luzdelaluna' ),
+					'next_text' => '<span class="next">' . __( 'Next', 'luzdelaluna' ),
+				)
+			);
+			?>
+		</div>
 
-        <?php
+		<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'luzdelaluna' ); ?></p>
-        <?php
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'luzdelaluna' ); ?></p>
+			<?php
 		endif;
 
 		?>
-    </div>
+	</div>
 
-    <?php
+		<?php
 	endif; // Check for have_comments().
-	
+
 	comment_form();
 	?>
 

@@ -11,54 +11,54 @@ get_header();
 ?>
 
 <section class="section-search">
-    <div class="container">
+	<div class="container">
 
-        <div id="primary" class="content-area">
-            <main id="main" class="site-main" role="main">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
 
-                <?php
-		if ( have_posts() ) :
-			?>
-
-                <header class="page-header pb-4">
-                    <h1 class="page-title">
-                        <?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'luzdelaluna' ), '<span>' . get_search_query() . '</span>' );
+				<?php
+				if ( have_posts() ) :
 					?>
-                    </h1>
-                </header><!-- .page-header -->
 
-                <ul class="search-results list-group list-group-flush pb-4">
+				<header class="page-header pb-4">
+					<h1 class="page-title">
+						<?php
+							/* translators: %s: search query. */
+							printf( esc_html__( 'Search Results for: %s', 'luzdelaluna' ), '<span>' . get_search_query() . '</span>' );
+						?>
+					</h1>
+				</header><!-- .page-header -->
 
-                    <?php
-				/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<ul class="search-results list-group list-group-flush pb-4">
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called search-result.php in the template-parts folder.
-				 */
-				get_template_part( 'template-parts/search', 'result' );
+					<?php
+						/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-				endwhile;
-			?>
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called search-result.php in the template-parts folder.
+						 */
+						get_template_part( 'template-parts/search', 'result' );
 
-                </ul>
+						endwhile;
+					?>
 
-                <?php
-			the_posts_navigation();
-			else :
-				get_template_part( 'template-parts/content', 'none' );
+				</ul>
+
+						<?php
+						the_posts_navigation();
+						else :
+							get_template_part( 'template-parts/content', 'none' );
 		endif;
-			?>
+						?>
 
-            </main>
-        </div><!-- #primary -->
+			</main>
+		</div><!-- #primary -->
 
-    </div><!-- /.container -->
+	</div><!-- /.container -->
 </section><!-- /.section-search -->
 
 <?php

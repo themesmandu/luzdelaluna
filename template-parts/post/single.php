@@ -11,43 +11,43 @@
 
 <article id="post-<?php the_ID(); ?>" class="single-article box-shadow">
 
-    <figure class="m-0">
-        <?php the_post_thumbnail(); ?>
-    </figure>
+	<figure class="m-0">
+		<?php the_post_thumbnail(); ?>
+	</figure>
 
-    <div class="card-body">
+	<div class="card-body">
 
-        <div class="entry-links">
-            <?php luzdelaluna_entry_footer(); ?>
-        </div>
-        <header class="entry-header">
-            <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-        </header>
+		<div class="entry-links">
+			<?php luzdelaluna_entry_footer(); ?>
+		</div>
+		<header class="entry-header">
+			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		</header>
 
-        <?php
-if ( get_post_type() === 'post' ) {
-	?>
-        <div class="entry-meta mb-3">
+		<?php
+		if ( get_post_type() === 'post' ) {
+			?>
+		<div class="entry-meta mb-3">
 			<?php
 			luzdelaluna_posted_by();
 			luzdelaluna_posted_on();
-		?>
-        </div>
+			?>
+		</div>
 
-        <?php
-}
-?>
-
-        <?php
-	if ( has_excerpt() ) :
+			<?php
+		}
 		?>
-        <div class="lead"><?php the_excerpt(); ?></div>
-        <?php
+
+		<?php
+		if ( has_excerpt() ) :
+			?>
+		<div class="lead"><?php the_excerpt(); ?></div>
+			<?php
 		endif;
-	?>
+		?>
 
-        <div class="entry-content">
-            <?php
+		<div class="entry-content">
+			<?php
 			the_content(
 				sprintf(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -63,7 +63,7 @@ if ( get_post_type() === 'post' ) {
 				)
 			);
 			?>
-        </div><!-- .entry-content -->
+		</div><!-- .entry-content -->
 
-    </div><!-- .card-body -->
+	</div><!-- .card-body -->
 </article><!-- #post-<?php the_ID(); ?> -->
