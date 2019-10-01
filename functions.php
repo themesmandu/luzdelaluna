@@ -52,6 +52,7 @@ if ( ! function_exists( 'luzdelaluna_setup' ) ) :
 			array(
 				'primary'     => esc_html__( 'Primary', 'luzdelaluna' ),
 				'footer-menu' => esc_html__( 'Footer Menu', 'luzdelaluna' ),
+				'social-menu' => esc_html__( 'Social Menu', 'luzdelaluna' ),
 			)
 		);
 
@@ -146,20 +147,6 @@ function luzdelaluna_widgets_init() {
 		)
 	);
 
-	for ( $i = 1; $i <= 3; $i++ ) {
-		register_sidebar(
-			array(
-				/* translators: %d: footer widget number. */
-				'name'          => sprintf( esc_html__( 'Footer Widgets %d', 'luzdelaluna' ), $i ),
-				'id'            => 'footer-' . $i,
-				'description'   => esc_html__( 'Add widgets here.', 'luzdelaluna' ),
-				'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
-			)
-		);
-	}
 }
 add_action( 'widgets_init', 'luzdelaluna_widgets_init' );
 

@@ -17,38 +17,45 @@
 <footer id="footer">
 
 	<div class="container">
-		<?php
-		$active = array();
-		for ( $i = 1; $i <= 4; $i++ ) {
-			if ( is_active_sidebar( 'footer-' . $i ) ) {
-				$active[] = $i;
-			}
-		}
-		?>
-		<?php if ( 0 !== count( $active ) ) { ?>
-		<div id="footer-widgets" class="row content">
-			<?php foreach ( $active as $footer_widget_id ) : ?>
-			<div class="col-lg-4 column">
-				<?php dynamic_sidebar( 'footer-' . $footer_widget_id ); ?>
-			</div>
-			<?php endforeach; ?>
-		</div><!-- #footer-widgets -->
-		<?php } ?>
 
 		<div class="footer_content_wrap content">
+		<?php if ( ! has_custom_logo() ) { ?>
+
+<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+	title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+	itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php
+		} else {
+			the_custom_logo();
+		}
+		?>
 			<?php
 			if ( has_nav_menu( 'footer-menu' ) ) :
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer-menu',
 						'menu_id'        => 'footer-menu',
-						'menu_class'     => 'footer-nav align-center mb-0',
+						'menu_class'     => 'footer-nav',
 					)
 				);
 		endif;
 			?>
+
+<?php
+if ( has_nav_menu( 'social-menu' ) ) :
+	wp_nav_menu(
+		array(
+			'theme_location' => 'footer-menu',
+			'menu_id'        => 'footer-menu',
+			'menu_class'     => 'social-nav',
+		)
+	);
+		endif;
+?>
 		</div>
 	</div><!-- .container -->
+	<div class="site-info">
+            </div><!-- .site-info -->
 	<button class="up-btn" id="up-btn" title="<?php echo esc_html( __( 'Go to top', 'ghumgham' ) ); ?>"
 		style="display: block;"><i class="fas fa-chevron-up"></i></button>
 </footer>
