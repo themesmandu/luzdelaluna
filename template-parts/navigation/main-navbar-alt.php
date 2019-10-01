@@ -47,7 +47,7 @@
 					'theme_location'  => 'primary',
 					'container'       => 'div',
 					'container_id'    => 'navbarmenus',
-					'container_class' => 'collapse navbar-collapse justify-content-end',
+					'container_class' => 'collapse navbar-collapse justify-content-center',
 					'menu_id'         => false,
 					'depth'           => 8,
 					'menu_class'      => 'navbar-nav',

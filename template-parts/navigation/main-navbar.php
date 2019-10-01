@@ -39,10 +39,6 @@
 			}
 			?>
 
-			<?php if ( is_front_page() ) : ?>
-			<a href="#buytheme" class="btn-uni btn-white br-round btn-buynow bold-7 m-0 btn-mob">Buy Now</a>
-			<?php endif; ?>
-
 			<button id="menu" class="navbar-toggler collapsed" type="button" data-toggle="collapse"
 				data-target="#navbarmenus">
 				<span></span>
@@ -56,7 +52,7 @@
 					'theme_location'  => 'primary',
 					'container'       => 'div',
 					'container_id'    => 'navbarmenus',
-					'container_class' => 'collapse navbar-collapse justify-content-end',
+					'container_class' => 'collapse navbar-collapse justify-content-center',
 					'menu_id'         => false,
 					'depth'           => 8,
 					'menu_class'      => 'navbar-nav',

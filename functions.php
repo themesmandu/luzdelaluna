@@ -191,6 +191,12 @@ function luzdelaluna_scripts() {
 	wp_enqueue_script( 'luzdelaluna-popper', get_template_directory_uri() . '/vendor/bootstrap-src/js/popper.min.js', array(), '1.14.3', true );
 	wp_enqueue_script( 'luzdelaluna-bootstrap', get_template_directory_uri() . '/vendor/bootstrap-src/js/bootstrap.min.js', array(), '4.1.2', true );
 
+	// Front Page Image Slider jQuery
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'imageslider-js', get_theme_file_uri( '/assets/js/imageslider.js' ), array(), wp_get_theme()->get( 'Version' ), true );
+		wp_enqueue_script( 'slider-script-js', get_theme_file_uri( '/assets/js/slider-script.js' ), array(), wp_get_theme()->get( 'Version' ), true );
+	}
+
 	// Theme added JavaScript: Added by Developers.
 	wp_enqueue_script( 'luzdelaluna-basic', get_template_directory_uri() . '/assets/js/basic.js', array(), wp_get_theme()->get( 'Version' ), true );
 
@@ -198,7 +204,11 @@ function luzdelaluna_scripts() {
 	wp_enqueue_script( 'slick-js', get_theme_file_uri( '/assets/js/slick.js' ), array(), '1.0.0', true );
 
 	// Font Montserrat (Google Font)
-	wp_enqueue_style( 'luzdelaluna-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap', false );
+	wp_enqueue_style( 'luzdelaluna-montserrat-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap', false );
+	// Font Playfair (Google Font)
+	wp_enqueue_style( 'luzdelaluna-playfair-google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400i&display=swap', false );
+	// Font Poppins (Google Font)
+	wp_enqueue_style( 'luzdelaluna-poppins-google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

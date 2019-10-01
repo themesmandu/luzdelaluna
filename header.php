@@ -40,27 +40,48 @@
 			?>
             </div>
 
-            <?php
-			// Header Image.
-			the_custom_header_markup();
+            <?php if ( is_front_page() ) : ?>
+            <div id="image_slider">
+                <div class="slider_images">
+                    <ul>
+                        <li>
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/slider-one.jpg'; ?>"
+                                alt="one" title="one" />
+                            <div class="slide_caption">
+                                <div class="slide_content">
+                                <h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
+                                    <a href="#" class="btn-uni">Find out how </a>
+                                </div>
+                            </div>
+                        </li>
 
-			if ( is_front_page() && ! is_home() ) {
-				// head banner on the front page if it enabled.
-				get_template_part( 'template-parts/jumbotron' );
-			}
-			?>
+                        <li>
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/slider-two.jpg'; ?>"
+                                alt="two" title="two" />
+                            <div class="slide_caption">
+                                <div class="slide_content">
+                                <h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
+                                    <a href="#" class="btn-uni">Find out how </a>
+                                </div>
+                            </div>
+                        </li>
 
-            <?php if ( is_front_page() && ! is_home() ) : ?>
-            <div class="header-content align-center">
-                <div class="container">
-                    <h2 class="header-heading uppercase">Sell Beats & <span> Products </span></h2>
-
-                    <p>The Music Maker WordPress Theme is a powerful website template that allows you to sell beats,
-                        music, loops, products, and more. Join over 4,000 music creators and create a professional
-                        business and brand today!</p>
-
-                    <a href="#" class="btn btn-uni br-round">+10 Demos</a>
-                    <a href="#" class="btn btn-uni btn-white br-round">Features</a>
+                        <li>
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/slider-three.jpg'; ?>"
+                                alt="three" title="three" />
+                            <div class="slide_caption">
+                                <div class="slide_content">
+                                <h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
+                                    <a href="#" class="btn-uni">Find out how </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slider_indicator">
+                    <a href="#" title="one"></a>
+                    <a href="#" title="two"></a>
+                    <a href="#" title="three"></a>
                 </div>
             </div>
             <?php endif; ?>

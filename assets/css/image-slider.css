@@ -1,0 +1,143 @@
+/* -- Image Slider Styles -- */
+
+#image_slider img {
+    object-fit: cover;
+    width: 100%;
+    max-width: unset !important;
+    margin-bottom: 0 !important;
+    min-height: 100%;
+}
+
+#image_slider {
+    position: relative;
+    overflow: hidden;
+}
+
+#image_slider .slider_images ul {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+#image_slider .slider_images li {
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+
+#image_slider .slide_caption:before {
+    right: 50%;
+}
+
+#image_slider .slider_images li:after {
+    top: unset;
+    bottom: 0;
+    right: unset;
+    left: 24%;
+}
+
+#image_slider .slider_images {
+    overflow: hidden;
+    min-height: 275px;
+}
+
+.slide_caption .slide_content {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+
+.slide_caption .slider-heading {
+    font-size: 80px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.slide_caption span {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    font-style: italic;
+    color: #c3a165;
+}
+
+.slide_caption span.txt-above {
+    position: relative;
+    top: -30px;
+}
+
+.slide_caption span.large {
+    font-size: 86px;
+    position: unset;
+}
+
+.slide_caption .btn-uni {
+    display: inline-block;
+    animation: up .7s forwards;
+    background-color: transparent;
+    border: 2px solid #c3a165;
+    position: relative;
+    margin-left: 160px;
+}
+
+.slide_caption .btn-uni:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -160px;
+    background-color: #c3a165;
+    height: 1px;
+    width: 148px;
+}
+
+.slider_indicator {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+}
+
+.slider_indicator a {
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+    border: 2px solid #e7e7e7;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.slider_indicator a.active {
+    background-color: #c3a165;
+    border-color: #c3a165;
+}
+
+
+/* -- Key Frame Animation For Line Above Image -- */
+
+@keyframes up {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .4;
+    }
+
+    75% {
+        opacity: .7;
+    }
+
+    100% {
+        margin-top: 20px;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1440px) {
+}
