@@ -59,6 +59,25 @@ add_filter( 'body_class', 'luzdelaluna_body_classes' );
 
 
 /**
+ * If the current page has a template, apply it's name to the list of classes. This is
+ * necessary if there are multiple pages with the same template and you want to apply the
+ * name of the template to the class of the body.
+ *
+ * @param array $classes The current array of attributes to be applied to the
+ */
+function luzdelaluna_custom_template_body_classes( $classes ) {
+	if ( ! empty( get_post_meta( get_the_ID(), '_wp_page_template', true ) ) ) {
+		// Remove the `template-` prefix and get the name of the template without the file extension.
+		$templatename = basename( get_page_template_slug( get_the_ID() ) );
+		$templatename = str_ireplace( 'template-', '', basename( get_page_template_slug( get_the_ID() ), '.php' ) );
+		$classes[]    = $templatename;
+	}
+
+	return array_filter( $classes );
+}
+add_filter( 'body_class', 'luzdelaluna_custom_template_body_classes' );
+
+/**
  * Adds custom classes to the array of post classes.
  *
  * @param array $classes Classes for the article element.
