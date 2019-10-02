@@ -61,9 +61,9 @@
 			);
 			?>
 
-			<?php if ( is_front_page() ) : ?>
-				<a href="#buytheme" class="btn-uni btn-white br-round btn-buynow bold-7">Buy Now</a>
-			<?php endif; ?>
-
+<button class="btn-cart btn-beats">
+			<p><i class="fas fa-shopping-cart"></i> 
+			<span class="cart-count edd-cart-quantity"><?php edd_get_cart_quantity(); ?></span></p>
+			</button>
 		</div>
 	</nav>

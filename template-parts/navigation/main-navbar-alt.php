@@ -55,7 +55,10 @@
 				)
 			);
 			?>
-
+			<button class="btn-cart btn-beats">
+			<p><i class="fas fa-shopping-cart"></i> 
+			<span class="cart-count edd-cart-quantity"><?php edd_get_cart_quantity(); ?></span></p>
+			</button>
 			<?php
 			get_template_part( 'template-parts/navigation/add-item', 'search-form' );
 			?>
