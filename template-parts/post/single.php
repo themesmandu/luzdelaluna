@@ -9,45 +9,41 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="single-article box-shadow">
+<article id="post-<?php the_ID(); ?>" class="single-article">
 
-	<figure class="m-0">
-		<?php the_post_thumbnail(); ?>
-	</figure>
+    <figure class="m-0">
+        <?php the_post_thumbnail(); ?>
+    </figure>
 
-	<div class="card-body">
-
-		<div class="entry-links">
-			<?php luzdelaluna_entry_footer(); ?>
-		</div>
-		<header class="entry-header">
-			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-		</header>
-
-		<?php
+    <div class="content-wrap box-shadow pb-0">
+        <?php
 		if ( get_post_type() === 'post' ) {
 			?>
-		<div class="entry-meta mb-3">
-			<?php
+        <div class="entry-meta mb-3">
+            <?php
 			luzdelaluna_posted_by();
 			luzdelaluna_posted_on();
 			?>
-		</div>
+        </div>
 
-			<?php
+        <?php
 		}
 		?>
 
-		<?php
+        <header class="entry-header">
+            <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+        </header>
+
+        <?php
 		if ( has_excerpt() ) :
 			?>
-		<div class="lead"><?php the_excerpt(); ?></div>
-			<?php
+        <div class="lead"><?php the_excerpt(); ?></div>
+        <?php
 		endif;
 		?>
 
-		<div class="entry-content">
-			<?php
+        <div class="entry-content">
+            <?php
 			the_content(
 				sprintf(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -64,6 +60,10 @@
 			);
 			?>
 		</div><!-- .entry-content -->
+		
+		<div class="entry-footer">
+            <?php luzdelaluna_entry_footer(); ?>
+        </div>
 
-	</div><!-- .card-body -->
+    </div><!-- .content-wrap -->
 </article><!-- #post-<?php the_ID(); ?> -->

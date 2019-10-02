@@ -11,25 +11,25 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<figure>
-		<?php the_post_thumbnail(); ?>
-	</figure>
+    <figure>
+        <?php the_post_thumbnail(); ?>
+    </figure>
 
-	<div class="card-body">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+    <div class="content-wrap box-shadow">
+        <div class="entry-meta">
+            <?php luzdelaluna_posted_by(); ?>
+            <?php luzdelaluna_posted_on(); ?>
+        </div>
 
-		<div class="entry-meta card-footer">
-			<?php luzdelaluna_posted_on(); ?>
-			<?php luzdelaluna_posted_by(); ?>
-		</div>
+        <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<div class="entry-summary card-text">
-			<?php luzdelaluna_entry_summary(); ?>
-		</div>
+        <div class="entry-summary">
+            <?php luzdelaluna_entry_summary(); ?>
+        </div>
 
-		<footer class="entry-footer">
-			<?php luzdelaluna_entry_footer(); ?>
-		</footer>
-	</div>
+        <div class="entry-footer">
+            <?php luzdelaluna_entry_footer(); ?>
+        </div>
+    </div>
 
 </article><!-- #post-<?php the_ID(); ?> -->

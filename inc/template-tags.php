@@ -37,7 +37,7 @@ if ( ! function_exists( 'luzdelaluna_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function luzdelaluna_posted_on() {
-		$time_string = '<i class="far fa-calendar-alt"></i> <time class="entry-date published" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf(
 			$time_string,
@@ -68,7 +68,7 @@ if ( ! function_exists( 'luzdelaluna_posted_by' ) ) :
 			'<a class="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"><i class="fas fa-user"></i> ' . $byline; // WPCS: XSS OK.
+		echo '<span class="byline">by ' . $byline; // WPCS: XSS OK.
 
 	}
 endif;
@@ -84,14 +84,14 @@ if ( ! function_exists( 'luzdelaluna_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'luzdelaluna' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'luzdelaluna' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . '<span class="cata">Category:</span>' . esc_html__( '%1$s', 'luzdelaluna' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'luzdelaluna' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'luzdelaluna' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . '<span class="cata">Tag:</span>' . esc_html__( ' %1$s', 'luzdelaluna' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 

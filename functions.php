@@ -214,3 +214,7 @@ function wildspirit_add_classes_on_link_attributes( $classes ) {
 }
 add_filter( 'nav_menu_link_attributes', 'wildspirit_add_classes_on_link_attributes' );
 
+function luzdelaluna_total_posts() {
+	$total = wp_count_posts()->publish;
+	echo $total;
+	} 

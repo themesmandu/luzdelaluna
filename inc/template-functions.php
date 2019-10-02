@@ -71,11 +71,11 @@ function luzdelaluna_post_classes( $classes ) {
 	}
 
 	if ( is_singular( array( 'post', 'page' ) ) && ! is_front_page() ) {
-		$classes[] = 'card mb-4';
+		$classes[] = '';
 	}
 
 	if ( is_home() || is_archive() ) {
-		$classes[] = 'card mb-4';
+		$classes[] = '';
 	}
 
 	return $classes;
