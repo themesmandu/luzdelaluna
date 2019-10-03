@@ -14,27 +14,24 @@ get_header();
 
 
 	<?php
-	echo get_the_id();
-			while ( have_posts() ) :
-					the_post();
 					$download_id = get_the_id();
 					$download    = new EDD_Download( $download_id );
-					?>
-    <div class="row">
-        <figure class="col-md-5">
-            <?php the_post_thumbnail(); ?>
-        </figure>
+	?>
+	<div class="row">
+		<figure class="col-md-5">
+			<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>
+		</figure>
 
-        <div class="single-prd-content col-md-7">
-            <h2 clss="product-heading bold-5 uppercase">
-                <?php echo esc_html( $download->post_title ); ?>
-            </h2>
-            <span class="price">
-                <?php edd_price( $download_id ); ?>
-            </span>
-            <p><?php echo esc_html( $download->post_excerpt ); ?></p>
-            <div class="add_cart">
-                <?php
+		<div class="single-prd-content col-md-7">
+			<h2 clss="product-heading bold-5 uppercase">
+				<?php echo esc_html( $download->post_title ); ?>
+			</h2>
+			<span class="price">
+				<?php edd_price( $download_id ); ?>
+			</span>
+			<p><?php echo esc_html( $download->post_excerpt ); ?></p>
+			<div class="add_cart">
+				<?php
 						echo edd_get_purchase_link(
 							array(
 								'download_id' => $download_id,
@@ -44,20 +41,18 @@ get_header();
 							)
 						);
 						?>
-            </div>
-        </div>
-    </div><!-- /.row -->
-    <p><?php echo esc_html( $download->post_content ); ?></p>
+			</div>
+		</div>
+	</div><!-- /.row -->
+	<p><?php echo esc_html( $download->post_content ); ?></p>
 
 
-    <?php
+	<?php
 						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
 					endif;
-
-		endwhile; // End of the loop.
-				?>
+	?>
 
 
 
