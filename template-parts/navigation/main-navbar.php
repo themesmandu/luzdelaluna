@@ -61,9 +61,8 @@
 			);
 			?>
 
-<button class="btn-cart btn-beats">
-			<p><i class="fas fa-shopping-cart"></i> 
-			<span class="cart-count edd-cart-quantity"><?php edd_get_cart_quantity(); ?></span></p>
-			</button>
+<a href="<?php echo edd_get_checkout_uri(); ?>">
+			<i class="fas fa-shopping-cart"></i> (<span class="header-cart edd-cart-quantity"><?php echo edd_get_cart_quantity(); ?></span>)
+</a>
 		</div>
 	</nav>

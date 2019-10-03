@@ -30,6 +30,14 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/helpers.php';
 
+// check for plugin using plugin name.
+if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+	/**
+	* EDD custom constants.
+	*/
+	require get_template_directory() . '/inc/edd-modifications.php';
+}
+
 /**
  * Load Jetpack compatibility file.
  */
