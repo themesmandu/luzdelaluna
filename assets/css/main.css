@@ -1489,7 +1489,7 @@ section.widget p {
     white-space: nowrap;
 }
 
-.edd_purchase_submit_wrapper a.edd-add-to-cart:before {
+.page-template-page-shop .edd_purchase_submit_wrapper a.edd-add-to-cart:before {
     content: '+';
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -1506,7 +1506,7 @@ section.widget p {
     margin: 0;
 }
 
-.product-wrap .price {
+.prd-price {
     font-size: 20px;
     color: rgba(0,0,0,0.3);
 }
@@ -1515,6 +1515,50 @@ section.widget p {
     color: #32cd32;
     width: 100%;
 }
+
+/* -- Product Single Page Styles -- */
+
+.single-prd-content .product-heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.single-prd-content .prd-price {
+    font-size: 28px;
+    display: block;
+}
+
+.single-prd-content .col-description {
+    margin-top: 22px;
+}
+
+.single-prd-content p,
+.prd-description p {
+    font-size: 15px;
+}
+
+.single-prd-content .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 32px;
+    background-color: #c3a165;
+    color: #ffffff;
+}
+
+.single-download .edd_download_purchase_form {
+    margin: 60px 0 0;
+}
+
+.prd-description {
+    border-top: 1px solid #eeeeee;
+    margin-top: 32px;
+    padding-top: 32px;
+}
+
+.prd-description p {
+    line-height: 2;
+}
+
 
 /* -- Footer Styles -- */
 

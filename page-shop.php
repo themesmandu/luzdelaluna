@@ -57,7 +57,7 @@ $downloads = new WP_Query( $args );
 					<a href="<?php the_permalink(); ?>"><?php echo esc_html( $download->post_title ); ?></a>
 				</h2>
 
-				<span class="price">
+				<span class="prd-price">
 					<?php edd_price( $download_id ); ?>
 				</span>
 			</div>
