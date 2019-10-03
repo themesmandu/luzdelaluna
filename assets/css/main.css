@@ -853,12 +853,12 @@ input[type="submit"] {
 .nav-links .page-numbers,
 .page-links,
 .page-links a {
-    font-size: 14px;
+    font-size: 16px;
     color: #cccccc;
     padding: 2px;
     margin: 0 10px;
     margin-right: 10px;
-    transition: unset;
+    text-transform: uppercase;
 }
 
 span.page-numbers:first-child {
@@ -873,6 +873,27 @@ span.page-numbers.current {
     padding: 4px 7px;
     border: none;
     color: #1e1e1e;
+}
+
+.nav-links .page-numbers.next,
+.nav-links .page-numbers.prev {
+    position: relative;
+}
+
+.nav-links .page-numbers.next:before,
+.nav-links .page-numbers.prev:before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    right: -65px;
+    background-color: #c3a165;
+}
+
+.nav-links .page-numbers.prev:before {
+    right: unset;
+    left: -65px;
 }
 
 /* -- Comment Form Styles -- */
