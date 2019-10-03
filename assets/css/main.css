@@ -301,7 +301,8 @@ h6 {
 .section-testimonial .section-heading:before,
 .section-testimonial .sub-heading:before,
 .section-instagram .sub-heading:before,
-.protfolio-gallery figcaption {
+.protfolio-gallery figcaption,
+.product-wrap .add_cart {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -342,7 +343,7 @@ h6 {
     padding: 15px 0;
     transform: translate3d(0, 70px, 0);
     background-color: #ffffff;
-    box-shadow: 0px 13px 35px -12px rgba(0,0,0,0.15);
+    box-shadow: 0px 13px 35px -12px rgba(0, 0, 0, 0.15);
 }
 
 .home .main-navigation.fixed {
@@ -371,18 +372,19 @@ h6 {
 }
 
 .main-navigation .menu-item {
-    margin: 0 23px;
+    padding: 10px 23px;
+    display: flex;
 }
 
 .main-navigation .menu-item:last-child {
-    margin-right: 0;
+    padding-right: 0;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 13px;
     color: #252525;
     text-transform: uppercase;
-    padding: 5px 0;
+    padding: 0;
     letter-spacing: 1px;
 }
 
@@ -1264,6 +1266,7 @@ section.widget p {
     overflow: hidden;
     display: inline-block;
     cursor: pointer;
+    z-index: 1;
 }
 
 .protfolio-gallery figure:hover {
@@ -1275,24 +1278,6 @@ section.widget p {
     margin: 0;
     text-align: left;
 }
-
-/* .protfolio-gallery figure:before {
-    content: '';
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: all .6s ease-in-out;
-    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-}
-
-.protfolio-gallery figure:hover:before {
-    opacity: 1;
-    transform: scale3d(2.5, 1.6, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
-} */
 
 .protfolio-gallery figure:hover img {
     opacity: .6;
@@ -1308,6 +1293,59 @@ section.widget p {
 
 .protfolio-gallery figure:hover h3 {
     opacity: 1;
+}
+
+/* -- Image Pop Up Styles On Portfolio -- */
+
+.imageapear {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .89);
+}
+
+.thumbnail-pop {
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+.imageapear figure {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageapear .fa-times {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.imageapear .fa-times:hover {
+    color: #c3a165;
+}
+
+.imageapear figure img {
+    transform: scale(.8);
+    transition: .3s ease-in-out;
+}
+
+.imageapear figure img.show {
+    transform: scale(1);
 }
 
 /* -- Contact Page Template Styles -- */
@@ -1377,7 +1415,7 @@ section.widget p {
 .contact-form textarea {
     font-size: 14px;
     border: none;
-    border-bottom: 1px solid rgba(30,30,30,0.07);
+    border-bottom: 1px solid rgba(30, 30, 30, 0.07);
     padding: 12px 0;
     margin-bottom: 36px;
 }
@@ -1385,6 +1423,55 @@ section.widget p {
 .contact-form input[type="submit"] {
     padding: 15px 25px;
 }
+
+/* -- Shop Page TemplateStyles -- */
+
+.product-wrap {
+    position: relative;
+}
+
+.product-wrap img {
+    transition: all .4s ease-in-out;
+}
+
+.product-wrap:hover img {
+    opacity: .1;
+}
+
+.product-wrap .add_cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.product-wrap:hover .add_cart {
+    opacity: 1;
+}
+
+.edd_purchase_submit_wrapper a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.edd_purchase_submit_wrapper a.edd-add-to-cart:before {
+    content: '+';
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #1a1a1a;
+    display: block;
+}
+
+.product-heading,
+.product-heading a {
+    font-size: 18px;
+    color: #242424;
+}
+
 
 /* -- Footer Styles -- */
 

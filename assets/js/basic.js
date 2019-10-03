@@ -72,4 +72,20 @@ jQuery(document).ready(function ($) {
     $('.contact-form .wpcf7-form-control-wrap').parent().addClass('inline');
     $('.contact-form .your-message').parent().removeClass('inline');
 
+    // Image pop up
+
+    $('.thumbnail-pop').click(function () {
+        $('.imageapear img').attr('src', this.src);
+        $('.imageapear').fadeIn().addClass('show');
+        $('.imageapear figure img').addClass('show');
+    });
+
+
+    $(document).click(function (e) {
+        if ($(e.target).is('.thumbnail-pop, .imageapear img') === false) {
+            $('.imageapear').fadeOut().removeClass('show');
+            $('.imageapear figure img').removeClass('show');
+        }
+    });
+
 });

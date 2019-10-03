@@ -22,21 +22,45 @@ $args = array(
 
 $downloads = new WP_Query( $args );
 
+?>
+<div class="container">
+    <ul class="row">
+
+        <?php
 if ( $downloads->have_posts() ) :
 	while ( $downloads->have_posts() ) :
 		$downloads->the_post();
 		$download_id = get_the_ID();
-		the_post_thumbnail();
-		the_title();
-		edd_price( $download_id );
+
+		?>
+        <li class="col-md-3">
+            <div class="product-wrap">
+                <figure>
+                    <?php the_post_thumbnail(); ?>
+                    <div class="add_cart">
+                        <?php
 		echo edd_get_purchase_link(
 			array(
 				'download_id' => $download_id,
 				'price'       => false,
 				'text'        => 'Add to cart',
-				'style'       => 'button',
+				'style'       => 'plain',
 			)
 		);
+		?>
+                    </div>
+            </div>
+            </figure>
+
+            <h2 clss="product-heading bold-5 uppercase">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
+
+            <span class="price">
+                <?php edd_price( $download_id ); ?>
+            </span>
+        </li>
+        <?php
 	endwhile;
 	/**
 			 * Pagination parameters of the_posts_pagination() since: 4.1.0
@@ -77,5 +101,8 @@ if ( $downloads->have_posts() ) :
 endif;
 		wp_reset_postdata();
 
-
+?>
+    </ul> <!-- end of ul .row -->
+</div> <!-- end of Container -->
+<?php
 		get_footer();

@@ -25,13 +25,24 @@ get_header();
             <button type="button" class="btn-uni filter" data-rel="3">Illustration</button>
         </div>
 
+        <div class="imageapear">
+            <figure>
+                <i class="fas fa-times"></i>
+                <img src="">
+            </figure>
+            <section class="modal-btns">
+                <button class="modal-btn prev-btn">&lt;</button>
+                <button class="modal-btn next-btn">&gt;</button>
+            </section>
+        </div>
+
         <ul class="protfolio-gallery" id="gallery">
 
             <li class="all 1">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/1.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/1.jpg"
+                        class="thumbnail-pop" />
+
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -40,9 +51,9 @@ get_header();
 
             <li class="all 1">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/2.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/2.jpg"
+                        class="thumbnail-pop" />
+
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -51,9 +62,20 @@ get_header();
 
             <li class="all 1">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/3.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/3.jpg"
+                        class="thumbnail-pop" />
+
+                    <figcaption>
+                        <h3>Figure Name</h3>
+                    </figcaption>
+                </figure>
+            </li>
+
+            <li class="all 1">
+                <figure>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/4.jpg"
+                        class="thumbnail-pop" />
+
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -62,9 +84,9 @@ get_header();
 
             <li class="all 1 2">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/4.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/5.jpg"
+                        class="thumbnail-pop" />
+
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -73,20 +95,9 @@ get_header();
 
             <li class="all 1 2">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/5.jpg" />
-                    </a>
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/6.jpg"
+                        class="thumbnail-pop" />
 
-            <li class="all 1 2">
-                <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/6.jpg" />
-                    </a>
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -95,9 +106,20 @@ get_header();
 
             <li class="all 1 3">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/7.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/7.jpg"
+                        class="thumbnail-pop" />
+
+                    <figcaption>
+                        <h3>Figure Name</h3>
+                    </figcaption>
+                </figure>
+            </li>            
+
+            <li class="all 1 3">
+                <figure>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/8.jpg"
+                        class="thumbnail-pop" />
+
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -106,9 +128,8 @@ get_header();
 
             <li class="all 1 3">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/8.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/9.jpg"
+                        class="thumbnail-pop" />
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
@@ -117,20 +138,8 @@ get_header();
 
             <li class="all 1 3">
                 <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/9.jpg" />
-                    </a>
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 3">
-                <figure>
-                    <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-one.jpg" />
-                    </a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-one.jpg"
+                        class="thumbnail-pop" />
                     <figcaption>
                         <h3>Figure Name</h3>
                     </figcaption>
