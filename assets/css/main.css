@@ -854,8 +854,7 @@ input[type="submit"] {
 .page-links,
 .page-links a {
     font-size: 14px;
-    font-weight: 700;
-    opacity: .8;
+    color: #cccccc;
     padding: 2px;
     margin: 0 10px;
     margin-right: 10px;
@@ -867,12 +866,13 @@ span.page-numbers:first-child {
 }
 
 span.page-numbers:hover {
-    border-bottom: 2px solid #3333333;
+    border-bottom: 2px solid #333333;
 }
 
 span.page-numbers.current {
     padding: 4px 7px;
     border: none;
+    color: #1e1e1e;
 }
 
 /* -- Comment Form Styles -- */
@@ -1426,8 +1426,17 @@ section.widget p {
 
 /* -- Shop Page TemplateStyles -- */
 
-.product-wrap {
+.page-template-page-shop .column {
+    margin-bottom: 30px;
+}
+
+.add_cart form {
+    width: 100%;
+}
+
+.product-wrap figure {
     position: relative;
+    margin: 0 0 30px;
 }
 
 .product-wrap img {
@@ -1450,11 +1459,13 @@ section.widget p {
     opacity: 1;
 }
 
-.edd_purchase_submit_wrapper a {
+.edd_purchase_submit_wrapper a,
+.edd-cart-added-alert {
     font-size: 16px;
     font-weight: 600;
     color: #1a1a1a;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .edd_purchase_submit_wrapper a.edd-add-to-cart:before {
@@ -1470,8 +1481,19 @@ section.widget p {
 .product-heading a {
     font-size: 18px;
     color: #242424;
+    line-height: 1.5;
+    margin: 0;
 }
 
+.product-wrap .price {
+    font-size: 20px;
+    color: rgba(0,0,0,0.3);
+}
+
+.edd-cart-added-alert {
+    color: #32cd32;
+    width: 100%;
+}
 
 /* -- Footer Styles -- */
 

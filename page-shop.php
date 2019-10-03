@@ -16,7 +16,7 @@ get_header();
 
 $args = array(
 	'post_type'      => 'download',
-	'posts_per_page' => 9,
+	'posts_per_page' => 4,
 	'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
 );
 
@@ -33,8 +33,8 @@ if ( $downloads->have_posts() ) :
 		$download_id = get_the_ID();
 
 		?>
-        <li class="col-md-3">
-            <div class="product-wrap">
+        <li class="col-md-3 column">
+            <div class="product-wrap align-center">
                 <figure>
                     <?php the_post_thumbnail(); ?>
                     <div class="add_cart">
@@ -49,19 +49,24 @@ if ( $downloads->have_posts() ) :
 		);
 		?>
                     </div>
+
+                </figure>
+
+                <h2 class="product-heading bold-5 uppercase">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h2>
+
+                <span class="price">
+                    <?php edd_price( $download_id ); ?>
+                </span>
             </div>
-            </figure>
-
-            <h2 clss="product-heading bold-5 uppercase">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </h2>
-
-            <span class="price">
-                <?php edd_price( $download_id ); ?>
-            </span>
         </li>
         <?php
 	endwhile;
+	?>
+    </ul> <!-- end of ul .row -->
+
+    <?php
 	/**
 			 * Pagination parameters of the_posts_pagination() since: 4.1.0
 			 *
@@ -102,7 +107,6 @@ endif;
 		wp_reset_postdata();
 
 ?>
-    </ul> <!-- end of ul .row -->
 </div> <!-- end of Container -->
 <?php
 		get_footer();
