@@ -19,8 +19,10 @@ get_header();
         <div class="row">
             <div class="col-md-6 column">
                 <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg"
-                        class="thumbnail-right" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" />
+                    <figcaption>
+                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
+                    </figcaption>
                 </figure>
 
                 <div class="col-content">
@@ -37,8 +39,10 @@ get_header();
 
             <div class="col-md-6 column-right">
                 <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-two.jpg"
-                        class="thumbnail-right" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-two.jpg" />
+                    <figcaption>
+                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
+                    </figcaption>
                 </figure>
 
                 <div class="col-content col-right">
@@ -104,10 +108,12 @@ get_header();
     <div class="container">
         <h6 class="clr-gold bold-5 sub-heading">Instagram</h6>
         <h1 class="section-heading">Join on Insta</h1>
-        <div class="insta-content">
-            <?php echo do_shortcode( '[instagram-feed]' ); ?>
-        </div>
     </div> <!-- end of .container -->
+    
+    <div class="insta-content">
+        <?php echo do_shortcode( '[instagram-feed]' ); ?>
+    </div>
+
 </section> <!-- end of .section-instagram -->
 
 <?php

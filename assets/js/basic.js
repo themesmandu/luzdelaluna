@@ -25,10 +25,12 @@ jQuery(document).ready(function ($) {
 
     // Smooth Scrolling For Buy Button To Its Content
 
-    $('.btn-buynow').click(function(event) {
-        event.preventDefault();
-        $('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);
-     });
+    $('.btn-buynow').click(function (event) {
+        event.preventDefault(event);
+        $('html,body').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000);
+    });
 
     // To top Java Script
 
@@ -46,46 +48,28 @@ jQuery(document).ready(function ($) {
         }, 1000);
     });
 
-    // Click And Dragg Content And Images
+    // Protfolio Gallery jQuery
 
-    var y, top, down;
-
-    $('.scroll-animation').mousedown(function (e) {
-        e.preventDefault();
-        down = true;
-        y = e.pageY;
-        top = $(this).scrollTop();
+    $(function () {
+        var selectedClass = "";
+        $(".filter").click(function () {
+            selectedClass = $(this).attr("data-rel");
+            $("#gallery").fadeTo(100, .1);
+            $("#gallery li").not("." + selectedClass).fadeOut().removeClass('animation');
+            setTimeout(function () {
+                $("." + selectedClass).fadeIn().addClass('animation');
+                $("#gallery").fadeTo(300, 1);
+            }, 300);
+        });
     });
 
-    $('body').mousemove(function (e) {
-        if (down) {
-            var scrollY = e.pageY;
-            $(".scroll-animation").scrollTop(top - scrollY + y);
-        }
+    $('.btn-uni.filter').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
     });
 
-    $('body').mouseup(function (e) {
-        down = false;
-    });
+    // Contact Form Seven Added Classs On Textarea P
 
-    // Image pop up
-
-    $('.thumbnail-pop').click(function () {
-        $('.imageapear img').attr('src', this.src);
-        $('.imageapear').fadeIn().addClass('show');
-        $('.imageapear figure img').addClass('show');
-    });
-
-
-    $(document).click(function (e) {
-        if ($(e.target).is('.thumbnail-pop, .imageapear img') === false) {
-            $('.imageapear').fadeOut().removeClass('show');
-            $('.imageapear figure img').removeClass('show');
-        }
-    });
-
-    // Remove Content Div From 404 Page
-
-    $('.error404 div').remove('#content');
+    $('.contact-form .wpcf7-form-control-wrap').parent().addClass('inline');
+    $('.contact-form .your-message').parent().removeClass('inline');
 
 });

@@ -184,7 +184,7 @@ function luzdelaluna_scripts() {
 		wp_enqueue_script( 'slider-script-js', get_theme_file_uri( '/assets/js/slider-script.js' ), array(), wp_get_theme()->get( 'Version' ), true );
 	}
 
-	// Theme added JavaScript: Added by Developers.
+	// Theme Global Added JavaScript: Added by Developers.
 	wp_enqueue_script( 'luzdelaluna-basic', get_template_directory_uri() . '/assets/js/basic.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 	// Loading slick-slide js.

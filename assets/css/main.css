@@ -50,16 +50,20 @@ p {
 }
 
 p:last-child,
-#services .row-wrap:last-child {
+#services .row-wrap:last-child,
+#contact .address li:last-child {
     margin-bottom: 0;
 }
 
 figure,
-img,
-iframe {
+img {
     max-width: 100%;
     object-fit: cover;
     height: auto;
+}
+
+iframe {
+    max-width: 100%;
 }
 
 ul {
@@ -81,7 +85,7 @@ select,
 .comment-respond input[type=email],
 .comment-respond .comment-form-comment textarea {
     font-size: 15px;
-    color: #777777;
+    color: #212121;
     outline: none;
     border: 1px solid rgba(0, 0, 0, .14);
     width: 100%;
@@ -111,6 +115,10 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+textarea {
+    height: 170px;
 }
 
 select {
@@ -273,6 +281,10 @@ h6 {
     background-color: #c3a165;
 }
 
+.bg-clr-white {
+    background-color: #ffffff;
+}
+
 .brd-round {
     border-radius: 100%;
 }
@@ -283,6 +295,18 @@ h6 {
 
 .box-shadow {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+}
+
+.section-about figure figcaption,
+.section-testimonial .section-heading:before,
+.section-testimonial .sub-heading:before,
+.section-instagram .sub-heading:before,
+.protfolio-gallery figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 /* -- Container Styles -- */
@@ -306,16 +330,23 @@ h6 {
     z-index: 9;
 }
 
+.home .main-navigation {
+    position: fixed;
+    width: 100%;
+}
+
 .main-navigation.fixed {
+    position: fixed;
+    width: 100%;
     top: -70px;
     padding: 15px 0;
     transform: translate3d(0, 70px, 0);
-    background-color: #222328;
+    background-color: #ffffff;
+    box-shadow: 0px 13px 35px -12px rgba(0,0,0,0.15);
 }
 
-.home .main-navigation  {
-    position: fixed;
-    width: 100%;
+.home .main-navigation.fixed {
+    background-color: #222328;
 }
 
 .main-navigation .container {
@@ -392,6 +423,46 @@ section .sub-heading {
 
 .section-about figure {
     margin-bottom: 60px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #0d0d0d;
+}
+
+.section-about figure figcaption {
+    margin: 0;
+    opacity: 0;
+    top: 40%;
+    bottom: unset;
+    left: 30px;
+    right: 30px;
+    max-width: 250px;
+    text-align: right;
+    border-right: 2px solid #ffffff;
+    padding: 0 25px 0 0;
+    transform: translateX(-50%);
+    transition: all .4s ease-in-out;
+}
+
+.section-about figure:hover figcaption {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.protfolio-gallery figure img,
+.section-about figure img {
+    transition: all 0.35s ease-in-out;
+    transform: scale3d(1.05, 1.05, 1);
+}
+
+.protfolio-gallery figure:hover img,
+.section-about figure:hover img {
+    opacity: .2;
+    transform: scale3D(1, 1, 1);
+}
+
+.section-about figure figcaption p {
+    color: #ffffff;
 }
 
 .section-about .column-right figure {
@@ -439,10 +510,7 @@ section .sub-heading {
     background-repeat: no-repeat;
     height: 107px;
     width: 153px;
-    position: absolute;
     top: -10px;
-    right: 0;
-    left: 0;
     margin: 0 auto;
     z-index: -9;
 }
@@ -459,10 +527,8 @@ section .sub-heading {
     width: 1px;
     height: 50px;
     background-color: #c3a165;
-    position: absolute;
     bottom: 100%;
-    right: 0;
-    left: 0;
+    top: unset;
     margin: 0 auto;
 }
 
@@ -545,14 +611,28 @@ section .sub-heading {
 /* -- Section Instagram Styles -- */
 
 .insta-content {
-    margin: 52px -10px 0;
+    margin: 52px 0 0;
+    overflow: hidden;
+}
+
+#sb_instagram #sbi_load {
+    margin: 32px 0 0;
+}
+
+#sb_instagram .sb_instagram_header {
+    display: none;
+}
+
+#sb_instagram #sbi_load .sbi_load_btn,
+#sb_instagram .sbi_follow_btn a {
+    border-radius: 0;
 }
 
 /* -- Blog Page Styles -- */
 
 .page-content {
     background-image: url("../../assets/images/blog-banner-bg.jpg");
-    padding: 92px 0;
+    padding: 82px 0;
 }
 
 .page-content .container {
@@ -619,14 +699,14 @@ section .sub-heading {
 }
 
 .entry-summary p,
-.entry-content p{
+.entry-content p {
     font-size: 15px;
 }
 
 .entry-footer {
     font-size: 15px;
     color: #959595;
-    border-top: 1px solid rgba(0,0,0,0.04);
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
     margin-top: 45px;
     padding: 22px 0;
     text-transform: uppercase;
@@ -636,7 +716,7 @@ section .sub-heading {
     margin-bottom: 10px;
 }
 
-.entry-footer span:last-child{
+.entry-footer span:last-child {
     margin: 0;
 }
 
@@ -648,7 +728,7 @@ section .sub-heading {
 .entry-footer .cata {
     font-weight: 700;
     color: #242424;
-    margin:0 7px 0 0;
+    margin: 0 7px 0 0;
 }
 
 .entry-footer a {
@@ -661,7 +741,8 @@ section .sub-heading {
     display: none;
 }
 
-.entry-summary .more-link {
+.entry-summary .more-link,
+input[type="submit"] {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -1042,15 +1123,18 @@ section.widget p {
 
 /* -- Services Page Template Style -- */
 
-#services #content {
+.page-template-page-services #content {
     padding: 120px 0;
+    background-color: #f8f8f8;
 }
 
 #services .sub-heading {
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    color: rgba(30,30,30,0.8);
+    color: rgba(30, 30, 30, 0.8);
     max-width: 870px;
     margin: 0 auto 85px;
+    line-height: 1.7;
 }
 
 #services .row-wrap {
@@ -1098,7 +1182,7 @@ section.widget p {
 .sn_number {
     font-size: 100px;
     font-weight: 700;
-    color: rgba(0,0,0,0.13);
+    color: rgba(0, 0, 0, 0.13);
     line-height: 1;
     display: block;
 }
@@ -1112,7 +1196,7 @@ section.widget p {
     font-size: 15px;
 }
 
-.more_link {
+#services .more_link {
     font-size: 13px;
     color: #1e1e1e;
     position: relative;
@@ -1120,7 +1204,7 @@ section.widget p {
     line-height: 2.3;
 }
 
-.more_link:before {
+#services .more_link:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -1130,6 +1214,177 @@ section.widget p {
     bottom: 0;
 }
 
+/* -- Protfolio Page Template Styles -- */
+
+.page-template-page-portfolio #content,
+.page-template-page-contact #content {
+    padding: 120px 0;
+}
+
+.filter-wrap {
+    margin-bottom: 46px;
+}
+
+.filter {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9fa3a7;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    padding: 8px 18px;
+    letter-spacing: 1.8px;
+    cursor: pointer;
+}
+
+.filter:focus {
+    outline: none;
+}
+
+.filter.active {
+    border-color: #c3a165;
+    color: #242424;
+}
+
+.protfolio-gallery {
+    margin: 0 -15px;
+    column-count: 3;
+    column-gap: 0;
+}
+
+.protfolio-gallery li {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.protfolio-gallery figure {
+    margin: 18px 0 0;
+    position: relative;
+    background: linear-gradient(-45deg, #c3a165 0%, #2c3a6f 100%);
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.protfolio-gallery figure:hover {
+    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
+}
+
+.protfolio-gallery figcaption {
+    padding: 30px;
+    margin: 0;
+    text-align: left;
+}
+
+/* .protfolio-gallery figure:before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all .6s ease-in-out;
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+}
+
+.protfolio-gallery figure:hover:before {
+    opacity: 1;
+    transform: scale3d(2.5, 1.6, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+} */
+
+.protfolio-gallery figure:hover img {
+    opacity: .6;
+}
+
+.protfolio-gallery figcaption h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0;
+    transition: .3s;
+}
+
+.protfolio-gallery figure:hover h3 {
+    opacity: 1;
+}
+
+/* -- Contact Page Template Styles -- */
+
+.page-heading {
+    font-size: 36px;
+    margin-bottom: 32px;
+}
+
+.page-sub-heading {
+    font-size: 18px;
+}
+
+#contact .address {
+    margin: 0;
+}
+
+#contact .address li {
+    margin-bottom: 32px;
+}
+
+#contact address {
+    margin-bottom: 36px;
+}
+
+#contact .address span {
+    font-size: 12px;
+    color: #9fa3a7;
+    display: block;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+
+#contact address h5 {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+#contact .description {
+    font-size: 15px;
+}
+
+.contact-form {
+    margin-top: 125px;
+}
+
+.contact-form .wpcf7 {
+    margin-top: 50px;
+}
+
+.contact-form p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form .inline {
+    display: inline-block;
+    width: calc(32% - 8px);
+    margin-left: 30px;
+}
+
+.contact-form .inline:nth-child(2) {
+    margin-left: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid rgba(30,30,30,0.07);
+    padding: 12px 0;
+    margin-bottom: 36px;
+}
+
+.contact-form input[type="submit"] {
+    padding: 15px 25px;
+}
 
 /* -- Footer Styles -- */
 
@@ -1159,7 +1414,7 @@ section.widget p {
     font-weight: 400;
     margin: 60px 0 0;
     padding: 60px 0 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #footer .menu {

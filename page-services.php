@@ -21,7 +21,7 @@ get_header();
             audiam
             erroribus. Graeco accusamus conceptam at per, qui semper deleniti ut, te est tale corrumpit.</h4>
 
-        <div class="row-wrap box-shadow">
+        <div class="row-wrap box-shadow bg-clr-white">
             <div class="row">
                 <div class="column col-image">
                     <figure>
@@ -46,7 +46,7 @@ get_header();
             </div>
 		</div><!-- .row-wrap -->
 		
-		<div class="row-wrap box-shadow">
+		<div class="row-wrap box-shadow bg-clr-white">
             <div class="row">
                 <div class="column col-image col-left">
                     <figure>
@@ -55,7 +55,7 @@ get_header();
                     </figure>
                 </div>
 
-                <div class="column col-text col-right">
+                <div class="column col-text col-right align-right">
                     <div class="col-content">
                         <span class="sn_number">02</span>
                         <h3 class="uppercase bold-8">design solution</h3>
@@ -71,7 +71,7 @@ get_header();
             </div>
 		</div><!-- .row-wrap -->
 		
-		<div class="row-wrap box-shadow">
+		<div class="row-wrap box-shadow bg-clr-white">
             <div class="row">
                 <div class="column col-image">
                     <figure>
