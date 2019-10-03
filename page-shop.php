@@ -16,7 +16,7 @@ get_header();
 
 $args = array(
 	'post_type'      => 'download',
-	'posts_per_page' => 4,
+	'posts_per_page' => 2,
 	'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
 );
 
@@ -76,23 +76,10 @@ $downloads = new WP_Query( $args );
 					 *
 					 */
 				$pagination_args = array(
-					'mid_size'  => 4,
 					'prev_text' => __( 'Prev', 'luzdelaluna' ),
 					'next_text' => __( 'Next', 'luzdelaluna' ),
 				);
 
-				/**
-				 * Fix pagination link base
-				 *
-				 * If in paginated posts w/o multiple loop
-				 *
-				 */
-
-				if ( ! is_front_page() && 0 < intval( $page ) ) {
-					$pagination_args['base'] = user_trailingslashit(
-						untrailingslashit( get_page_link( $page_ID ) ) . '/page/%#%'
-					);
-				}
 				/**
 				 * Fix Pagination with $GLOBALS['wp_query'] = {custom_query}
 				 *
