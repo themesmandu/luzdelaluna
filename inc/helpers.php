@@ -63,6 +63,16 @@ elseif ( is_single() ) :
     </div>
 </div>
 <?php
+
+elseif ( is_singular('download') ) :
+	?>
+<div class="page-content">
+    <div class="container">
+        <h1 class="header-heading uppercase">
+            <?php printf( esc_html__( 'Single Shop', 'luzdelaluna' ), get_search_query() ); ?></h1>
+    </div>
+</div>
+<?php
 		elseif ( is_search() ) :
 			?>
 <div class="page-content">
