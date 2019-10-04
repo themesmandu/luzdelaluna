@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<section class="section-about">
+<section class="section-about p-0">
     <div class="container">
         <div class="row">
             <div class="col-md-6 column">

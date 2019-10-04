@@ -1,4 +1,3 @@
-
 @media (max-width: 1200px) {
     .main-navigation {
         padding: 26px 0;
@@ -19,7 +18,7 @@
         padding: 52px 0;
     }
 
-    .page-template-page-services #content {
+    .page-template #content {
         padding: 60px 0;
     }
 
@@ -44,6 +43,23 @@
         padding: 15px 30px 15px 15px
     }
 
+    .filter-wrap {
+        margin-bottom: 24px;
+    }
+
+    .protfolio-gallery figure {
+        margin-top: 15px;
+    }
+
+    .contact-form .inline {
+        width: 60%;
+        margin: 0;
+    }
+
+    .page-template-page-shop #content .container {
+        max-width: 720px;
+    }
+
     #footer {
         text-align: center;
     }
@@ -63,6 +79,7 @@
     .shopping-wrap {
         width: 100%;
         justify-content: flex-end;
+        margin-top: 10px;
     }
 
     #image_slider img {
@@ -103,7 +120,7 @@
     .section-about .column-right {
         margin-top: 60px;
     }
-    
+
     .section-about figure,
     .section-about .column-right figure {
         margin: 0 0 30px;
@@ -111,6 +128,77 @@
 
     .section-about .column-right .col-right {
         order: unset;
+    }
+
+    #services .row-wrap {
+        max-width: 575px;
+        margin: 0 auto 56px;
+    }
+
+    #services .col-image,
+    #services .col-text,
+    #services .col-image.col-left,
+    #services .col-text.col-right {
+        width: 100%;
+        padding: 0 15px;
+        order: unset;
+        text-align: left;
+    }
+
+    #services .col-image {
+        text-align-last: center;
+    }
+
+    #services .col-content {
+        padding: 0;
+    }
+
+    #services .col-content,
+    #services .col-right .col-content {
+        padding: 0;
+        margin-top: 32px;
+    }
+
+    .imageapear figure img.show {
+        max-height: 400px;
+    }
+
+    .protfolio-gallery {
+        column-count: 2;
+        margin: 0 -10px;
+    }
+
+    .protfolio-gallery li {
+        padding: 0 10px;
+    }
+
+    .page-template-page-contact .container {
+        max-width: 540px;
+    }
+
+    #contact .align-right {
+        margin-top: 42px;
+        text-align: left;
+    }
+
+    .contact-form {
+        margin-top: 36px;
+    }
+
+    .page-heading {
+        margin-bottom: 10px;
+    }
+
+    .page-sub-heading {
+        font-size: 16px;
+    }
+
+    .contact-form .wpcf7 {
+        margin-top: 40px;
+    }
+
+    .contact-form .inline {
+        width: 100%;
     }
 }
 
@@ -149,7 +237,46 @@
     .rev-slide p {
         font-size: 16px;
     }
-    
+
+    .page-content {
+        padding: 32px 0;
+    }
+
+    .header-heading {
+        font-size: 42px;
+    }
+
+    .protfolio-gallery figcaption {
+        padding: 15px;
+    }
+
+    .protfolio-gallery figcaption h3 {
+        font-size: 18px;
+    }
+
+    #services .row-wrap {
+        padding: 0;
+    }
+
+    #services .col-content,
+    #services .col-right .col-content {
+        padding: 0 15px 15px;
+        margin-top: 15px;
+    }
+
+    .filter.active {
+        background: #c3a165;
+        color: #ffffff;
+    }
+
+    #contact .social-nav {
+        margin-top: 22px;
+    }
+
+    .page-heading {
+        font-size: 28px;
+    }
+
     #footer {
         padding: 32px 0;
     }
@@ -159,5 +286,62 @@
         margin: 30px 0 0;
         padding: 30px 0 0;
     }
-    
+
+}
+
+@media (max-width: 575px) {
+    .page-template-page-shop #content .container {
+        max-width: 370px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sn_number {
+        font-size: 68px;
+    }
+
+    #services .col-content h3 {
+        font-size: 36px;
+    }
+
+    .relslider {
+        margin: 0 -10px;
+    }
+
+    .rel-slide {
+        padding: 0 10px;
+    }
+
+    .slick-slider .product-heading,
+    .slick-slider .product-heading a,
+    .slick-slider .edd_purchase_submit_wrapper a,
+    .slick-slider .edd-cart-added-alert {
+        font-size: 13px;
+    }
+
+    .slick-slider .edd_purchase_submit_wrapper a:before {
+        font-size: 20px !important;
+    }
+
+    .slick-slider .product-wrap figure {
+        margin-bottom: 16px;
+    }
+
+    .slick-slider .prd-price {
+        font-size: 16px;
+    }
+
+    #edd_checkout_form_wrap input.edd-input,
+    #edd_checkout_form_wrap textarea.edd-input {
+        width: 100%;
+    }
+
+    .edd-success .card-body {
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .edd-success .header-heading {
+        font-size: 32px;
+    }
 }

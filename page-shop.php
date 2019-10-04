@@ -34,7 +34,7 @@ $downloads = new WP_Query( $args );
 				$download    = new EDD_Download( $download_id );
 
 				?>
-		<li class="col-md-3 column">
+		<li class="col-lg-3 col-sm-6 column">
 			<div class="product-wrap align-center">
 				<figure>
 					<?php the_post_thumbnail(); ?>

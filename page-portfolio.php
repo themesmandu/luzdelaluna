@@ -30,10 +30,6 @@ get_header();
                 <i class="fas fa-times"></i>
                 <img src="">
             </figure>
-            <section class="modal-btns">
-                <button class="modal-btn prev-btn">&lt;</button>
-                <button class="modal-btn next-btn">&gt;</button>
-            </section>
         </div>
 
         <ul class="protfolio-gallery" id="gallery">
