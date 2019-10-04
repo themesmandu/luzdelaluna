@@ -18,7 +18,7 @@ get_header();
 <div class="container">
 	<div id="contact" class="contact">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-lg-4 col-md-6">
 				<h3 class="page-heading uppercase bold-8">Contact Info</h3>
 
 				<address>
@@ -51,7 +51,7 @@ get_header();
 					?>
 			</div>
 
-			<div class="col-md-8 align-right">
+			<div class="col-lg-8 col-md-6 align-right">
 				<div class="mapouter">
 					<div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
 							src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"

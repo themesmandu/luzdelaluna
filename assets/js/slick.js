@@ -3036,6 +3036,7 @@ jQuery(document).ready(function ($) {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
+            arrows: false,
             autoplaySpeed: 4000,
             dots: true,
             fade: true,
@@ -3043,6 +3044,38 @@ jQuery(document).ready(function ($) {
             infinite: true,
             cssEase: 'ease-in-out',
             touchThreshold: 100
+        });
+    });
+})
+
+/* -- slick slider java script -- */
+
+jQuery(document).ready(function ($) {
+    $(document).on('ready', function () {
+        $(".relslider").slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: true,
+            autoplaySpeed: 5000,
+
+            // Mobile responsive
+
+            responsive: [{
+                    breakpoint: 991, // tablet breakpoint
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 767, // mobile breakpoint
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+
         });
     });
 })
