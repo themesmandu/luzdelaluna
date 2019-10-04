@@ -29,7 +29,7 @@ get_header();
 					</h1>
 				</header><!-- .page-header -->
 
-				<ul class="search-results list-group list-group-flush pb-4">
+				<ul class="search-results list-group">
 
 					<?php
 						/* Start the Loop */

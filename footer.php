@@ -16,22 +16,22 @@
 
 <footer id="footer">
 
-	<div class="container">
+    <div class="container">
 
-		<div class="footer_content_wrap content">
-			<?php if ( ! has_custom_logo() ) { ?>
+        <div class="footer_content_wrap content">
+            <?php if ( ! has_custom_logo() ) { ?>
 
-			<h1 class="navbar-brand m-0"><a rel="home" class="clr-white"
-					href="<?php echo esc_url( home_url( '/' ) ); ?>"
-					title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-					itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
+            <h1 class="navbar-brand m-0"><a rel="home" class="clr-white"
+                    href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                    title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+                    itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php
 			} else {
 				the_custom_logo();
 			}
 			?>
-			<div class="column-center">
-				<?php
+            <div class="column-center">
+                <?php
 				if ( has_nav_menu( 'footer-menu' ) ) :
 					wp_nav_menu(
 						array(
@@ -42,9 +42,9 @@
 					);
 		endif;
 				?>
-			</div>
+            </div>
 
-			<?php
+            <?php
 			if ( has_nav_menu( 'social-menu' ) ) :
 				wp_nav_menu(
 					array(
@@ -55,15 +55,11 @@
 				);
 		endif;
 			?>
-		</div>
-	</div><!-- .container -->
-	<div class="site-info">
-		<div class="container">
-			<h4 class="copyright">All Right Reserved 2019 © <span class="clr-white bold-3"><?php bloginfo( 'name' ); ?></span>
-			</h4>
-		</div>
-	</div><!-- .site-info -->
-	<?php
+        </div>
+
+
+        <div class="last-footer-wraper">
+            <?php
 	if ( has_nav_menu( 'footer-last-menu' ) ) :
 		wp_nav_menu(
 			array(
@@ -74,8 +70,17 @@
 		);
 		endif;
 	?>
-	<button class="up-btn" id="up-btn" title="<?php echo esc_html( __( 'Go to top', 'ghumgham' ) ); ?>"
-		style="display: block;"><i class="fas fa-chevron-up"></i></button>
+
+            <div class="site-info col-right">
+                <h4 class="copyright">All Right Reserved 2019 © <span
+                        class="clr-white bold-3"><?php bloginfo( 'name' ); ?></span>
+                </h4>
+            </div> <!-- .site-info -->
+        </div> <!-- .last-footer-wraper -->
+    </div> <!-- .container -->
+
+    <button class="up-btn" id="up-btn" title="<?php echo esc_html( __( 'Go to top', 'ghumgham' ) ); ?>"
+        style="display: block;"><i class="fas fa-chevron-up"></i></button>
 </footer>
 
 </div><!-- #page -->

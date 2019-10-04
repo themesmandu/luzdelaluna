@@ -36,7 +36,9 @@ a:link {
 a:focus,
 a:active,
 .slick-arrow:active,
-.slick-arrow:focus {
+.slick-arrow:focus,
+body.search-no-results input:active,
+body.search-no-results input:focus {
     outline: none !important;
     box-shadow: none !important;
 }
@@ -324,6 +326,20 @@ h6 {
     padding: 0 15px;
 }
 
+/* -- Hover Styles -- */
+
+body.search .list-item a:hover,
+.navbar-brand:hover,
+.navbar-expand-lg .navbar-nav .nav-link:hover,
+.home .navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: #c3a165;
+}
+
+.slide_caption .btn-uni:hover {
+    background-color: #c3a165;
+    color: #ffffff;
+}
+
 
 /* -- Main Navigation Styles -- */
 
@@ -377,6 +393,7 @@ h6 {
 .main-navigation .menu-item {
     padding: 10px 23px;
     display: flex;
+    align-items: center;
 }
 
 .main-navigation .menu-item:last-child {
@@ -391,7 +408,8 @@ h6 {
     letter-spacing: 1px;
 }
 
-.navbar-expand-lg .current-menu-item .nav-link {
+.navbar-expand-lg .current-menu-item .nav-link,
+.home .navbar-expand-lg .current-menu-item .nav-link {
     color: #c3a165;
 }
 
@@ -440,6 +458,7 @@ h6 {
     line-height: 20px;
     border-radius: 100%;
     background-color: #33dd47;
+    color: #ffffff;
     position: absolute;
     bottom: -5px;
     right: -5px;
@@ -623,11 +642,28 @@ section .sub-heading {
 }
 
 .section-about .more_link {
-    height: 30px;
-    width: 30px;
-    line-height: 28px;
+    height: 34px;
+    width: 34px;
+    line-height: 32px;
     display: block;
     text-align: center;
+    position: relative;
+}
+
+.section-about .more_link:before {
+    content: '';
+    border: 1px solid #c3a165;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    left: 2px;
+    border-radius: 100%;
+    transition: .3s;
+}
+
+.section-about .more_link:hover:before {
+    border-color: #ffffff;
 }
 
 /* -- Section Testimonial Styles -- */
@@ -1028,6 +1064,7 @@ input[type="submit"],
 .comment_pagination {
     margin-top: 32px;
     line-height: 2;
+    overflow: hidden;
 }
 
 
@@ -1799,12 +1836,31 @@ section.widget p {
     margin: 0;
 }
 
-.copyright {
-    font-size: 15px;
-    font-weight: 400;
+
+.last-footer-wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     margin: 60px 0 0;
     padding: 60px 0 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#footer .last-footer-wraper .nav-link {
+    font-size: 15px;
+    text-transform: unset;
+    color: #737373;
+}
+
+.last-footer-wraper .footer-last-nav {
+    margin: 0;
+}
+
+.copyright {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
 }
 
 #footer .menu {
@@ -2080,4 +2136,62 @@ table#edd_purchase_receipt_products .edd_download_file {
     color: #ffffff;
     display: block;
     line-height: 1.5;
+}
+
+/* -- Other Pagges ( Search Page, 404 Page, Nothing Found) -- */
+
+body.search .page-content .header-heading,
+.error404 .page-content .header-heading {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+body.search #content {
+    padding: 0;
+}
+
+body.search #content .container {
+    max-width: 810px;
+}
+
+section.no-results {
+    padding: 0;
+}
+
+body.search .luzdelaluna-search {
+    margin-top: 20px;
+}
+
+body.search .page-header.pb-4 {
+    display: none;
+}
+
+body.search .list-item {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 1.7;
+}
+
+body.search .list-item a {
+    color: #242424;
+}
+
+body.search-no-results input {
+    margin: 0;
+    border: 1px solid #eeeeee;
+}
+
+.error404 {
+    color: #ffffff;
+}
+
+.error404 .page-content {
+    padding: 175px 0;
+}
+
+.error404 #content {
+    display: none;
 }

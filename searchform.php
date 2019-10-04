@@ -8,8 +8,7 @@
 ?>
 
 <!-- Search Form Widget -->
-<div class="beats-search">
-    <h2 class="form-title"><?php esc_html_e( 'Search ', 'luzdelaluna' ); ?></h2>
+<div class="luzdelaluna-search">
     <div class="content">
         <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
             <div class="input-group">
