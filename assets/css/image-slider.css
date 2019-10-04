@@ -44,7 +44,7 @@
     min-height: 275px;
 }
 
-.slide_caption .slide_content {
+.slide_caption {
     position: absolute;
     top: 50%;
     right: 20%;

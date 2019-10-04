@@ -23,14 +23,13 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    // Smooth Scrolling For Buy Button To Its Content
+    // Adding Class In Cart Parent On Click
 
-    $('.btn-buynow').click(function (event) {
-        event.preventDefault(event);
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top
-        }, 1000);
+    $('.btn-search').click(function () {
+        $('.search_form').toggleClass('show');
     });
+
+
 
     // To top Java Script
 
@@ -63,7 +62,7 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    $('.btn-uni.filter').click(function(){
+    $('.btn-uni.filter').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
     });
 

@@ -1120,7 +1120,7 @@ jQuery("#image_slider").raiSlider({
     prev: "",
     next: "",
     duration: 2000,
-    delay: 40000000,
+    delay: 4000,
     width: 1920,
     height: 1000,
     autoPlay: true,

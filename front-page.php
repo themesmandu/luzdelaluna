@@ -51,8 +51,9 @@ get_header();
                     <div class="description">
                         <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's
                             standard dumy text.</p>
-                        <a href="#" class="more_link bg-clr-gld brd-round"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" /></a>
+                        <a href="#" class="more_link bg-clr-gld brd-round">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -109,7 +110,7 @@ get_header();
         <h6 class="clr-gold bold-5 sub-heading">Instagram</h6>
         <h1 class="section-heading">Join on Insta</h1>
     </div> <!-- end of .container -->
-    
+
     <div class="insta-content">
         <?php echo do_shortcode( '[instagram-feed]' ); ?>
     </div>
