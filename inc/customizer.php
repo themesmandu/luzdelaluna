@@ -59,38 +59,10 @@ function luzdelaluna_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'menubar_mode',
-			array(
-				'label'    => __( 'Main Menu Bar Mode', 'luzdelaluna' ),
-				'section'  => 'general_options',
-				'settings' => 'menubar_mode',
-				'type'     => 'select',
-				'choices'  => array(
-					'standard' => __( 'Standard', 'luzdelaluna' ),
-					'alt'      => __( 'Alternative', 'luzdelaluna' ),
-				),
-				'priority' => '10',
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'mainmenu_dropdown_mode',
-		array(
-			'default'           => 'default',
-			'type'              => 'theme_mod',
-			'sanitize_callback' => 'luzdelaluna_sanitize_mainmenu_dropdown_mode',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
 			'mainmenu_dropdown_mode',
 			array(
-				'label'       => __( 'Main Menu: drop-down mode', 'luzdelaluna' ),
-				'description' => __( 'Default a drop-down submenu by hover, parent link is active. Bootstrap mode: a drop-down submenu by click, the parent link is not active.', 'luzdelaluna' ),
+				'label'       => __( 'Main Menu: Appearance(small screen)', 'luzdelaluna' ),
+				'description' => __( 'Menu design for small screens', 'luzdelaluna' ),
 				'section'     => 'general_options',
 				'settings'    => 'mainmenu_dropdown_mode',
 				'type'        => 'select',
