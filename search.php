@@ -49,7 +49,7 @@ get_header();
 				</ul>
 
 						<?php
-						the_posts_navigation();
+						the_posts_pagination();
 						else :
 							get_template_part( 'template-parts/content', 'none' );
 		endif;
