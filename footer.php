@@ -21,7 +21,7 @@
         <div class="footer_content_wrap content">
             <?php if ( ! has_custom_logo() ) { ?>
 
-            <h1 class="navbar-brand mb-0"><a rel="home" class="clr-white"
+            <h1 class="navbar-brand m-0"><a rel="home" class="clr-white"
                     href="<?php echo esc_url( home_url( '/' ) ); ?>"
                     title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
                     itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>

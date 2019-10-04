@@ -231,6 +231,7 @@ h6 {
     text-transform: uppercase;
     font-size: 14px;
     padding: 12px 24px;
+    border: none;
 }
 
 .required {
@@ -392,6 +393,127 @@ h6 {
     color: #c3a165;
 }
 
+/* -- Navbar Cart And Search Styles -- */
+
+.shopping-wrap {
+    display: flex;
+}
+
+.nav-feature {
+    margin-right: 25px;
+}
+
+.nav-feature:last-child {
+    margin: 0;
+}
+
+.shopping-cart:before,
+.btn-search:before,
+.search-icon:before {
+    content: '';
+    background-image: url("../../assets/images/shopping-bag-white.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 32px;
+    display: block;
+    cursor: pointer;
+}
+
+.shop-cart .cart-link {
+    display: flex;
+    position: relative;
+}
+
+.edd-cart-quantity {
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 100%;
+    background-color: #33dd47;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+
+.btn-search {
+    display: inline-block;
+}
+
+.btn-search:before {
+    background-image: url("../../assets/images/search-white.png");
+    height: 24px;
+    width: 24px;
+}
+
+.search_form {
+    position: relative;
+    display: flex;
+}
+
+.search_form .form {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 38px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px -2px rgba(0,0,0,0.23);
+    animation: fadeInSide .2s ease-in;
+}
+
+.search_form.show .form {
+    display: block;
+}
+
+.search_form label {
+    display: none;
+}
+
+.search_form .input-group {
+    position: relative;
+    height: 55px;
+    width: 280px;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.search_form .form-control {
+    font-size: 14px;
+    color: #969696;
+    border: 1px solid #ececec;
+    border-radius: 0;
+    padding: 0 56px 0 10px;
+}
+
+.search_form .form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.search_form .input-group-wrap {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: 9;
+    overflow: hidden;
+}
+
+.search_form .submit {
+    height: 100%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.search-icon:before {
+    background-image: url("../../assets/images/search-btn.png");
+    height: 16px;
+    width: 16px;
+}
+
+
 /* -- Section Styles -- */
 
 section {
@@ -428,6 +550,7 @@ section .sub-heading {
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    display: inline-block;
     background-color: #0d0d0d;
 }
 
@@ -1195,11 +1318,11 @@ section.widget p {
 }
 
 #services .col-content {
-    padding: 0 15px 0 80px;
+    padding: 15px 15px 15px 80px;
 }
 
 #services .col-right .col-content {
-    padding: 0 80px 0 15px;
+    padding: 15px 80px 15px 15px;
 }
 
 .sn_number {
@@ -1537,12 +1660,22 @@ section.widget p {
     font-size: 15px;
 }
 
-.single-prd-content .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
+.single-prd-content .edd_purchase_submit_wrapper a {
     font-size: 14px;
     font-weight: 500;
     padding: 10px 32px;
     background-color: #c3a165;
     color: #ffffff;
+}
+
+.single-prd-content .edd-cart-added-alert {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #00c06a;
+    color: #ffffff;
+    width: auto;
+    padding: 10px 32px;
+    margin-top: 10px;
 }
 
 .single-download .edd_download_purchase_form {
@@ -1572,10 +1705,7 @@ section.widget p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-}
-
-#footer .column-center {
-    margin: 0 auto;
+    justify-content: space-between;
 }
 
 #footer .footer-nav,

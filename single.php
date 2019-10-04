@@ -60,7 +60,7 @@ get_header();
 										src="<?php echo esc_url( $nextthumbnail ); ?>" alt=""></a>
 							</figure>
 
-							<div class="next_title">
+							<div class="next_title col-right">
 								<span>Next Post</span>
 								<?php next_post_link( '%link', "<div class='detials'><h4>%title</h4></div>", true ); ?>
 							</div>
