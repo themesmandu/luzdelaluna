@@ -30,6 +30,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/helpers.php';
 
+/**
+ * Include tgm required plaugins functionality.
+ */
+require get_template_directory() . '/inc/tgm-plugin/tgm-required-plugins.php';
+
 // check for plugin using plugin name.
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 	/**
