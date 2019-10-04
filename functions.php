@@ -50,9 +50,10 @@ if ( ! function_exists( 'luzdelaluna_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary'     => esc_html__( 'Primary', 'luzdelaluna' ),
-				'footer-menu' => esc_html__( 'Footer Menu', 'luzdelaluna' ),
-				'social-menu' => esc_html__( 'Social Menu', 'luzdelaluna' ),
+				'primary'          => esc_html__( 'Primary', 'luzdelaluna' ),
+				'footer-menu'      => esc_html__( 'Footer Menu', 'luzdelaluna' ),
+				'footer-last-menu' => esc_html__( 'Footer Last Menu', 'luzdelaluna' ),
+				'social-menu'      => esc_html__( 'Social Menu', 'luzdelaluna' ),
 			)
 		);
 
@@ -217,4 +218,4 @@ add_filter( 'nav_menu_link_attributes', 'wildspirit_add_classes_on_link_attribut
 function luzdelaluna_total_posts() {
 	$total = wp_count_posts()->publish;
 	echo $total;
-	} 
+}
