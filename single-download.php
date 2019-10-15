@@ -18,8 +18,17 @@ get_header();
 					$download    = new EDD_Download( $download_id );
 	?>
     <div class="row">
-        <figure class="col-md-5">
-            <img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>" />
+        <figure class="single-prd-gallery col-md-5">
+            <div class="topimage">
+                <img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>" />
+            </div>
+
+            <ul class="single-gallery">
+                <li><img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>" /></li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-2.jpg" /></li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-3.jpg" /></li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-4.jpg" /></li>
+            </ul>
         </figure>
 
         <div class="single-prd-content col-md-7">
@@ -48,7 +57,7 @@ get_header();
     </div><!-- /.row -->
 
     <div class="prd-description">
-		<h5 class="bold-5 uppercase">Description</h5>
+        <h5 class="bold-5 uppercase">Description</h5>
         <p class="paragraph"><?php echo esc_html( $download->post_content ); ?></p>
     </div>
 

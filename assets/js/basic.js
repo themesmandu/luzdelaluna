@@ -87,4 +87,14 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Image Gallery In Single Product Page
+
+    $('.single-gallery img').click(function(){
+        $('.topimage img').attr('src', this.src);
+    });
+
+    $('.single-gallery img').click(function(){
+        $('.topimage').toggleClass('blink');
+    });
+
 });

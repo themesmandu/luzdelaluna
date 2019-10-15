@@ -112,7 +112,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover,
 div.wpcf7 input[type=reset]:hover {
-    background: #e4be1a;
+    background: #c3a165;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -1505,6 +1505,7 @@ section.widget p {
     display: inline-block;
     cursor: pointer;
     z-index: 1;
+    transition: .35s;
 }
 
 .protfolio-gallery figure:hover {
@@ -1675,6 +1676,7 @@ section.widget p {
 .contact-form input[type="submit"] {
     padding: 15px 25px;
     margin: 0;
+    cursor: pointer;
 }
 
 /* -- Shop Page TemplateStyles -- */
@@ -1750,6 +1752,37 @@ section.widget p {
 }
 
 /* -- Product Single Page Styles -- */
+
+.single-prd-gallery .topimage {
+    overflow: hidden;
+}
+
+.single-prd-gallery .topimage img {
+    animation: fadeOne .2s ease-in;
+}
+
+.single-prd-gallery .topimage.blink img {
+    animation: fadeTwo .2s ease-in;
+}
+
+.single-prd-gallery .single-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px -5px 0;
+}
+
+.single-prd-gallery .single-gallery li {
+    width: 75px;
+    height: 70px;
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.single-prd-gallery .single-gallery img {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
 
 .single-prd-content .product-heading {
     font-size: 24px;
@@ -2194,4 +2227,26 @@ body.search-no-results input {
 
 .error404 #content {
     display: none;
+}
+
+/* -- Image Gallery Effect Keyframes -- */
+
+@keyframes fadeOne {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeTwo {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
