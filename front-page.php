@@ -15,105 +15,97 @@ get_header();
 ?>
 
 <section class="section-about">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 column">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" />
-                    <figcaption>
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
-                    </figcaption>
-                </figure>
+	<div class="container">
+		<div class="row">
+			<?php for ( $i = 1; $i <= 2; $i++ ) : ?>
+			<div class="col-md-6 column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
+				<figure>
+					<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'section_one_image_' . $i ) ) ); ?>" />
+					<?php if ( get_theme_mod( 'section_one_hover_content_' . $i ) ) : ?>
+					<figcaption>
+						<p><?php echo esc_html( get_theme_mod( 'section_one_hover_content_' . $i ) ); ?></p>
+					</figcaption>
+					<?php endif; ?>	
+				</figure>
 
-                <div class="col-content">
-                    <h6 class="clr-gold bold-5 sub-heading">OUR MISSION</h6>
-                    <h2 class="section-heading">KEEP SIMPLE STUPID.</h2>
-                    <div class="description">
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's
-                            standard dumy text.</p>
-                        <a href="#" class="more_link bg-clr-gld brd-round"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" /></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 column-right">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-two.jpg" />
-                    <figcaption>
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
-                    </figcaption>
-                </figure>
-
-                <div class="col-content col-right">
-                    <h6 class="clr-gold bold-5 sub-heading">WHO WE ARE</h6>
-                    <h2 class="section-heading">CREATIVITY IS OUR HABIT.</h2>
-                    <div class="description">
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's
-                            standard dumy text.</p>
-                        <a href="#" class="more_link bg-clr-gld brd-round">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
+				<?php if ( get_theme_mod( 'section_one_subheading_' . $i ) ) : ?>
+					<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'section_one_subheading_' . $i ) ); ?></h6>
+					<?php endif; ?>	
+					<?php if ( get_theme_mod( 'section_one_heading_' . $i ) ) : ?>
+					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'section_one_heading_' . $i ) ); ?>.</h2>
+					<?php endif; ?>	
+					<?php if ( get_theme_mod( 'section_one_content_' . $i ) ) : ?>
+					<div class="description">
+						<p><?php echo esc_html( get_theme_mod( 'section_one_content_' . $i ) ); ?></p>
+							<?php endif; ?>	
+							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
+						<a href="#" class="more_link bg-clr-gld brd-round"><img
+								src="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>"></a>
+								<?php endif; ?>	
+					</div>
+				</div>
+			</div>
+			<?php endfor; ?>
+		</div>
+	</div>
 </section> <!-- end of .section-about -->
 
 <section class="section-testimonial align-center">
-    <div class="container">
-        <h6 class="clr-gold bold-5 sub-heading">Testimonial</h6>
-        <h1 class="section-heading">CLIENT LOVE US</h1>
+	<div class="container">
+	<?php if ( get_theme_mod( 'testimonial_subheading' ) ) : ?>
+		<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'testimonial_subheading' ) ); ?></h6>
+		<?php endif; ?>
+		<?php if ( get_theme_mod( 'testimonial_heading' ) ) : ?>
+		<h1 class="section-heading"><?php echo esc_html( get_theme_mod( 'testimonial_heading' ) ); ?></h1>
+		<?php endif; ?>
 
-        <div class="content-wrap">
-            <div class="slide-content align-center bg-clr-blu">
-                <div class="reviewslide">
-                    <div class="rev-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" />
-                        <p>
-                            Lorem ipsum dolor sit amet, Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <h4 class="client-name">Pedro Toribio<span>Photographer At unify</span></h4>
-                    </div>
+		<?php
+				$active_testimonials = array();
+		for ( $i = 1; $i <= 6; $i++ ) {
+			if ( get_theme_mod( 'testimonial_image_' . $i ) ) {
+				$active_testimonials[] = $i;
+			}
+		}
+		if ( 0 !== count( $active_testimonials ) ) :
+			?>
+		<div class="content-wrap">
+			<div class="slide-content align-center bg-clr-blu">
+				<div class="reviewslide">
+				<?php foreach ( $active_testimonials as $key => $testimonial_id ) : ?>
+					<div class="rev-slide">
+						<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'testimonial_image_' . $testimonial_id ) ) ); ?>" />
+						<?php if ( get_theme_mod( 'testimonial_content_' . $testimonial_id ) ) : ?>
+						<p><?php echo esc_html( get_theme_mod( 'testimonial_content_' . $testimonial_id ) ); ?></p>
+						<?php endif; ?>
+						<?php if ( get_theme_mod( 'testimonial_client_name_' . $testimonial_id ) ) : ?>
+						<h4 class="client-name"><?php echo esc_html( get_theme_mod( 'testimonial_client_name_' . $testimonial_id ) ); ?><span><?php echo esc_html( get_theme_mod( 'testimonial_client_occupation_' . $testimonial_id ) ); ?></span></h4>
+						<?php endif; ?>
+					</div>
+					<?php endforeach; ?>
 
-                    <div class="rev-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-two.jpg" />
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut
-                        </p>
-                        <h4 class="client-name">Toribio Pedro<span>Photographer At unify</span></h4>
-                    </div>
-
-                    <div class="rev-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" />
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, Ut enim ad minim veniam, quis
-                            nostrud
-                            exercitation ullamco laboris nisi ut sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <h4 class="client-name">Pedro Toribio<span>Photographer At unify</span></h4>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end of .content-wrap -->
-    </div> <!-- end of .container -->
+				</div>
+			</div>
+		</div> <!-- end of .content-wrap -->
+		<?php endif; ?>
+	</div> <!-- end of .container -->
 </section> <!-- end of .section-testimonial -->
 
 <section class="section-instagram align-center">
-    <div class="container">
-        <h6 class="clr-gold bold-5 sub-heading">Instagram</h6>
-        <h1 class="section-heading">Join on Insta</h1>
-    </div> <!-- end of .container -->
+	<div class="container">
+	<?php if ( get_theme_mod( 'instagram_subheading' ) ) : ?>
+		<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'instagram_subheading' ) ); ?></h6>
+		<?php endif; ?>
+		<?php if ( get_theme_mod( 'instagram_heading' ) ) : ?>
+		<h1 class="section-heading"><?php echo esc_html( get_theme_mod( 'instagram_heading' ) ); ?></h1>
+		<?php endif; ?>
+	</div> <!-- end of .container -->
 
-    <div class="insta-content">
-        <?php echo do_shortcode( '[instagram-feed]' ); ?>
-    </div>
+	<?php if ( get_theme_mod( 'instagram_shortcode' ) ) : ?>
+	<div class="insta-content">
+		<?php echo do_shortcode( get_theme_mod( 'instagram_shortcode' ) ); ?>
+	</div>
+	<?php endif; ?>
 
 </section> <!-- end of .section-instagram -->
 

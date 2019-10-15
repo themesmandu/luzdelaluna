@@ -38,9 +38,9 @@ function luzdelaluna_customize_register( $wp_customize ) {
 		* Custom customizer controls.
 		*/
 		require get_template_directory() . '/inc/customizer/custom-controls/class-luzdelaluna-toggle-switch-custom-control.php';
+		require get_template_directory() . '/inc/customizer/custom-controls/class-luzdelaluna-html-control.php';
 
 	}
-
 
 	/**
 	* Header slider section.
@@ -69,7 +69,22 @@ function luzdelaluna_customize_register( $wp_customize ) {
 			'active_callback' => 'luzdelaluna_set_front_page',
 		)
 	);
-	// END Options.
+
+	/**
+	* Section one.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/front-page/section-one.php';
+
+	/**
+	* Section testimonial.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/front-page/section-testimonial.php';
+
+	/**
+	* Section instagram.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/front-page/section-instagram.php';
+
 }
 add_action( 'customize_register', 'luzdelaluna_customize_register' );
 
