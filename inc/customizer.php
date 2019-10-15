@@ -63,6 +63,11 @@ function luzdelaluna_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/sections/contact-template.php';
 
 	/**
+	* Services page section.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/services-template.php';
+
+	/**
 	* Footer section.
 	*/
 	require get_template_directory() . '/inc/customizer/sections/footer.php';
