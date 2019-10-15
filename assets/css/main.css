@@ -344,6 +344,7 @@ body.search .list-item a:hover,
 /* -- Main Navigation Styles -- */
 
 .main-navigation {
+    max-width: 1920px;
     padding: 55px 0 35px;
     background-color: transparent;
     transition: all 0.3s;
