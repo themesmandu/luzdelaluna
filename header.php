@@ -33,50 +33,46 @@
 				?>
 			</div>
 
-			<?php if ( is_front_page() ) : ?>
+			<?php if ( is_front_page() && ! is_home() && get_theme_mod( 'slider_toggle' ) ) : ?>
+				<?php
+				$active_sliders = array();
+				for ( $i = 1; $i <= 6; $i++ ) {
+					if ( get_theme_mod( 'slider_image_' . $i ) ) {
+						$active_sliders[] = $i;
+					}
+				}
+				if ( 0 !== count( $active_sliders ) ) :
+					?>
 			<div id="image_slider">
 				<div class="slider_images">
 					<ul>
+					<?php foreach ( $active_sliders as $key => $slider_id ) : ?>
 						<li>
-							<img src="<?php echo get_template_directory_uri() . '/assets/images/slider-one.jpg'; ?>"
-								alt="one" title="one" />
+							<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'slider_image_' . $slider_id ) ) ); ?>"
+								alt="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'slider_image_' . $slider_id ) ) ); ?>"/>
+								<?php if ( get_theme_mod( 'slider_title' ) || get_theme_mod( 'slider_button_label' ) || get_theme_mod( 'slider_button_link' ) ) : ?>
 							<div class="slide_caption">
 								<div class="slide_content">
-								<h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
-									<a href="#" class="btn-uni">Find out how </a>
+									<?php if ( get_theme_mod( 'slider_title' ) ) : ?>
+								<h1 class="bold-8 slider-heading"><?php echo esc_html( get_theme_mod( 'slider_title' ) ); ?></h1>
+									<?php endif; ?>	
+									<?php if ( get_theme_mod( 'slider_button_label' ) || get_theme_mod( 'slider_button_link' ) ) : ?>
+								<a href="<?php echo esc_url( get_theme_mod( 'slider_button_link' ) ); ?>" class="btn-uni"><?php echo esc_html( get_theme_mod( 'slider_button_label' ) ); ?></a>
+								<?php endif; ?>
 								</div>
 							</div>
+							<?php endif; ?>	
 						</li>
-
-						<li>
-							<img src="<?php echo get_template_directory_uri() . '/assets/images/slider-two.jpg'; ?>"
-								alt="two" title="two" />
-							<div class="slide_caption">
-								<div class="slide_content">
-								<h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
-									<a href="#" class="btn-uni">Find out how </a>
-								</div>
-							</div>
-						</li>
-
-						<li>
-							<img src="<?php echo get_template_directory_uri() . '/assets/images/slider-three.jpg'; ?>"
-								alt="three" title="three" />
-							<div class="slide_caption">
-								<div class="slide_content">
-								<h1 class="bold-8 slider-heading"><span class="d-block">I am the</span> CEATIVE <br> FORCE <span class="txt-above">of my</span> <span class="large">life</span></h1>
-									<a href="#" class="btn-uni">Find out how </a>
-								</div>
-							</div>
-						</li>
+					<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="slider_indicator">
-					<a href="#" title="one"></a>
-					<a href="#" title="two"></a>
-					<a href="#" title="three"></a>
+					<?php foreach ( $active_sliders as $slider_id ) : ?>
+					<a href="#"></a>
+					<?php endforeach; ?>
 				</div>
 			</div>
+				<?php endif; ?>
 			<?php endif; ?>
 
 		</header><!-- #masthead -->

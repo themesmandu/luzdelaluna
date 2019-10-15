@@ -28,6 +28,11 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Sanitize functions.
  */
+require get_template_directory() . '/inc/sanitize.php';
+
+/**
+ * Sanitize functions.
+ */
 require get_template_directory() . '/inc/helpers.php';
 
 /**

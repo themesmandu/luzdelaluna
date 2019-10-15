@@ -12,7 +12,11 @@
  * Whether the static page is set to a front displays
  * https://developer.wordpress.org/reference/classes/wp_customize_control/active_callback/
  */
-
+function luzdelaluna_set_front_page() {
+	if ( 'page' === get_option( 'show_on_front' ) ) {
+		return true;
+	}
+}
 
 if ( ! function_exists( 'luzdelaluna_header_page_title' ) ) :
 
@@ -53,7 +57,7 @@ if ( ! function_exists( 'luzdelaluna_header_page_title' ) ) :
 </div>
 
 
-<?php
+			<?php
 
 elseif ( is_singular( 'download' ) ) :
 	?>
