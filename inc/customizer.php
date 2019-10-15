@@ -58,6 +58,16 @@ function luzdelaluna_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/sections/post-page-section.php';
 
 	/**
+	* Contact page section.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/contact-template.php';
+
+	/**
+	* Footer section.
+	*/
+	require get_template_directory() . '/inc/customizer/sections/footer.php';
+
+	/**
 	 *
 	 * Add Panel Front Page Settings
 	 */

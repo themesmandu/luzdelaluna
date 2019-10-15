@@ -16,49 +16,40 @@ get_header();
 ?>
 
 <section class="section-about p-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 column">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" />
-                    <figcaption>
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
-                    </figcaption>
-                </figure>
+<div class="container">
+		<div class="row">
+			<?php for ( $i = 1; $i <= 2; $i++ ) : ?>
+			<div class="col-md-6 column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
+				<figure>
+					<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'section_one_image_' . $i ) ) ); ?>" />
+					<?php if ( get_theme_mod( 'section_one_hover_content_' . $i ) ) : ?>
+					<figcaption>
+						<p><?php echo esc_html( get_theme_mod( 'section_one_hover_content_' . $i ) ); ?></p>
+					</figcaption>
+					<?php endif; ?>	
+				</figure>
 
-                <div class="col-content">
-                    <h6 class="clr-gold bold-5 sub-heading">OUR MISSION</h6>
-                    <h2 class="section-heading">KEEP SIMPLE STUPID.</h2>
-                    <div class="description">
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's
-                            standard dumy text.</p>
-                        <a href="#" class="more_link bg-clr-gld brd-round"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" /></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 column-right">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-two.jpg" />
-                    <figcaption>
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum</p>
-                    </figcaption>
-                </figure>
-
-                <div class="col-content col-right">
-                    <h6 class="clr-gold bold-5 sub-heading">WHO WE ARE</h6>
-                    <h2 class="section-heading">CREATIVITY IS OUR HABIT.</h2>
-                    <div class="description">
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's
-                            standard dumy text.</p>
-                        <a href="#" class="more_link bg-clr-gld brd-round"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
+				<?php if ( get_theme_mod( 'section_one_subheading_' . $i ) ) : ?>
+					<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'section_one_subheading_' . $i ) ); ?></h6>
+					<?php endif; ?>	
+					<?php if ( get_theme_mod( 'section_one_heading_' . $i ) ) : ?>
+					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'section_one_heading_' . $i ) ); ?>.</h2>
+					<?php endif; ?>	
+					<?php if ( get_theme_mod( 'section_one_content_' . $i ) ) : ?>
+					<div class="description">
+						<p><?php echo esc_html( get_theme_mod( 'section_one_content_' . $i ) ); ?></p>
+							<?php endif; ?>	
+							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
+						<a href="#" class="more_link bg-clr-gld brd-round"><img
+								src="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>"></a>
+								<?php endif; ?>	
+					</div>
+				</div>
+			</div>
+			<?php endfor; ?>
+		</div>
+	</div>
 </section> <!-- end of .section-about -->
 
 <?php

@@ -19,25 +19,30 @@ get_header();
 	<div id="contact" class="contact">
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
-				<h3 class="page-heading uppercase bold-8">Contact Info</h3>
+			<?php if ( get_theme_mod( 'contact_heading' ) ) : ?>
+				<h3 class="page-heading uppercase bold-8"><?php echo esc_html( get_theme_mod( 'contact_heading' ) ); ?></h3>
+				<?php endif; ?>
 
 				<address>
 					<ul class="address">
+					<?php if ( get_theme_mod( 'contact_address' ) ) : ?>
 						<li>
-							<span class="uppercase bold-7">Address</span>
-							<h5 class="bold-5">1600 Pennsylvania Ave NW, Washington Castle, PA 16101-5161</h5>
+							<span class="uppercase bold-7"><?php echo esc_html__( 'Address', 'luzdelaluna' ); ?></span>
+							<h5 class="bold-5"><?php echo esc_html( get_theme_mod( 'contact_address' ) ); ?></h5>
 						</li>
-
+						<?php endif; ?>
+						<?php if ( get_theme_mod( 'contact_phone' ) ) : ?>
 						<li>
-							<span class="uppercase bold-7">Phone</span>
-							<h5 class="bold-4">+123 456 7890</h5>
+							<span class="uppercase bold-7"><?php echo esc_html__( 'Phone', 'luzdelaluna' ); ?></span>
+							<h5 class="bold-4"><?php echo esc_html( get_theme_mod( 'contact_phone' ) ); ?></h5>
 						</li>
+						<?php endif; ?>
 					</ul>
 				</address>
 
-				<p class="description">Watching a movie on your smartphone can be pretty great, but who has the arm
-					strength to keep your
-					phone at face level for two hours? Not this kid, that’s for sure.</p>
+				<?php if ( get_theme_mod( 'contact_description' ) ) : ?>
+				<p class="description"><?php echo esc_html( get_theme_mod( 'contact_description' ) ); ?></p>
+					<?php endif; ?>
 					<?php
 					if ( has_nav_menu( 'social-menu' ) ) :
 						wp_nav_menu(
@@ -50,21 +55,23 @@ get_header();
 		endif;
 					?>
 			</div>
-
+			<?php if ( get_theme_mod( 'contact_description' ) ) : ?>
 			<div class="col-lg-8 col-md-6 align-right">
-				<div class="mapouter">
-					<div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
-							src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
-							frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-					</div>
-				</div>
+				<?php echo wp_kses_post( get_theme_mod( 'contact_map' ) ); ?>
 			</div>
+			<?php endif; ?>
 		</div>
 
 		<div class="contact-form">
-			<h3 class="page-heading uppercase bold-8">Send Message</h3>
-			<p class="page-sub-heading">If have you any question dont hesitate to send us a message</p>
-			<?php echo do_shortcode( '[contact-form-7 id="964" title="Contact form 2"]' ); ?>
+		<?php if ( get_theme_mod( 'contact_heading_form' ) ) : ?>
+			<h3 class="page-heading uppercase bold-8"><?php echo esc_html( get_theme_mod( 'contact_heading_form' ) ); ?></h3>
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'contact_subheading_form' ) ) : ?>
+			<p class="page-sub-heading"><?php echo esc_html( get_theme_mod( 'contact_subheading_form' ) ); ?></p>
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'contact_shortcode' ) ) : ?>
+				<?php echo do_shortcode( get_theme_mod( 'contact_shortcode' ) ); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
