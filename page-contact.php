@@ -16,34 +16,35 @@ get_header();
 ?>
 
 <div class="container">
-	<div id="contact" class="contact">
-		<div class="row">
-			<div class="col-lg-4 col-md-6">
-			<?php if ( get_theme_mod( 'contact_heading' ) ) : ?>
-				<h3 class="page-heading uppercase bold-8"><?php echo esc_html( get_theme_mod( 'contact_heading' ) ); ?></h3>
-				<?php endif; ?>
+    <div id="contact" class="contact">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <?php if ( get_theme_mod( 'contact_heading' ) ) : ?>
+                <h3 class="page-heading uppercase bold-8"><?php echo esc_html( get_theme_mod( 'contact_heading' ) ); ?>
+                </h3>
+                <?php endif; ?>
 
-				<address>
-					<ul class="address">
-					<?php if ( get_theme_mod( 'contact_address' ) ) : ?>
-						<li>
-							<span class="uppercase bold-7"><?php echo esc_html__( 'Address', 'luzdelaluna' ); ?></span>
-							<h5 class="bold-5"><?php echo esc_html( get_theme_mod( 'contact_address' ) ); ?></h5>
-						</li>
-						<?php endif; ?>
-						<?php if ( get_theme_mod( 'contact_phone' ) ) : ?>
-						<li>
-							<span class="uppercase bold-7"><?php echo esc_html__( 'Phone', 'luzdelaluna' ); ?></span>
-							<h5 class="bold-4"><?php echo esc_html( get_theme_mod( 'contact_phone' ) ); ?></h5>
-						</li>
-						<?php endif; ?>
-					</ul>
-				</address>
+                <address>
+                    <ul class="address">
+                        <?php if ( get_theme_mod( 'contact_address' ) ) : ?>
+                        <li>
+                            <span class="uppercase bold-7"><?php echo esc_html__( 'Address', 'luzdelaluna' ); ?></span>
+                            <h5 class="bold-5"><?php echo esc_html( get_theme_mod( 'contact_address' ) ); ?></h5>
+                        </li>
+                        <?php endif; ?>
+                        <?php if ( get_theme_mod( 'contact_phone' ) ) : ?>
+                        <li>
+                            <span class="uppercase bold-7"><?php echo esc_html__( 'Phone', 'luzdelaluna' ); ?></span>
+                            <h5 class="bold-4"><?php echo esc_html( get_theme_mod( 'contact_phone' ) ); ?></h5>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </address>
 
-				<?php if ( get_theme_mod( 'contact_description' ) ) : ?>
-				<p class="description"><?php echo esc_html( get_theme_mod( 'contact_description' ) ); ?></p>
-					<?php endif; ?>
-					<?php
+                <?php if ( get_theme_mod( 'contact_description' ) ) : ?>
+                <p class="description"><?php echo esc_html( get_theme_mod( 'contact_description' ) ); ?></p>
+                <?php endif; ?>
+                <?php
 					if ( has_nav_menu( 'social-menu' ) ) :
 						wp_nav_menu(
 							array(
@@ -54,26 +55,26 @@ get_header();
 						);
 		endif;
 					?>
-			</div>
-			<?php if ( get_theme_mod( 'contact_description' ) ) : ?>
-			<div class="col-lg-8 col-md-6 align-right dir-rtl">
-				<?php echo wp_kses( get_theme_mod( 'contact_map' ), expanded_alowed_tags() ); ?>
-			</div>
-			<?php endif; ?>
-		</div>
-
-		<div class="contact-form">
-		<?php if ( get_theme_mod( 'contact_heading_form' ) ) : ?>
-			<h3 class="page-heading uppercase bold-8"><?php echo esc_html( get_theme_mod( 'contact_heading_form' ) ); ?></h3>
-			<?php endif; ?>
-			<?php if ( get_theme_mod( 'contact_subheading_form' ) ) : ?>
-			<p class="page-sub-heading"><?php echo esc_html( get_theme_mod( 'contact_subheading_form' ) ); ?></p>
-			<?php endif; ?>
-			<?php if ( get_theme_mod( 'contact_shortcode' ) ) : ?>
-				<?php echo do_shortcode( get_theme_mod( 'contact_shortcode' ) ); ?>
-			<?php endif; ?>
-		</div>
-	</div>
+            </div>
+            <?php if ( get_theme_mod( 'contact_description' ) ) : ?>
+            <div class="col-lg-8 col-md-7">
+                <div class="contact-form">
+                    <?php if ( get_theme_mod( 'contact_heading_form' ) ) : ?>
+                    <h3 class="page-heading uppercase bold-8">
+                        <?php echo esc_html( get_theme_mod( 'contact_heading_form' ) ); ?></h3>
+                    <?php endif; ?>
+                    <?php if ( get_theme_mod( 'contact_subheading_form' ) ) : ?>
+                    <p class="page-sub-heading"><?php echo esc_html( get_theme_mod( 'contact_subheading_form' ) ); ?>
+                    </p>
+                    <?php endif; ?>
+                    <?php if ( get_theme_mod( 'contact_shortcode' ) ) : ?>
+                    <?php echo do_shortcode( get_theme_mod( 'contact_shortcode' ) ); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
 </div>
 
 <?php

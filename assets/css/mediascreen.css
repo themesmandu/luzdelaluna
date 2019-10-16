@@ -48,7 +48,7 @@
     }
 
     .contact-form .inline {
-        width: 60%;
+        width: 100%;
         margin: 0;
     }
 
@@ -154,6 +154,12 @@
 
     .contact-form {
         margin-top: 36px;
+        text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        text-align: left;
     }
 
     .page-heading {
