@@ -21,28 +21,27 @@ get_header();
 			<?php for ( $i = 1; $i <= 2; $i++ ) : ?>
 			<div class="col-md-6 column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
 				<figure>
-					<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'section_one_image_' . $i ) ) ); ?>" />
-					<?php if ( get_theme_mod( 'section_one_hover_content_' . $i ) ) : ?>
+					<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'about_image_' . $i ) ) ); ?>" />
+					<?php if ( get_theme_mod( 'about_hover_content_' . $i ) ) : ?>
 					<figcaption>
-						<p><?php echo esc_html( get_theme_mod( 'section_one_hover_content_' . $i ) ); ?></p>
+						<p><?php echo esc_html( get_theme_mod( 'about_hover_content_' . $i ) ); ?></p>
 					</figcaption>
 					<?php endif; ?>	
 				</figure>
 
 				<div class="col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
-				<?php if ( get_theme_mod( 'section_one_subheading_' . $i ) ) : ?>
-					<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'section_one_subheading_' . $i ) ); ?></h6>
+				<?php if ( get_theme_mod( 'about_subheading_' . $i ) ) : ?>
+					<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'about_subheading_' . $i ) ); ?></h6>
 					<?php endif; ?>	
-					<?php if ( get_theme_mod( 'section_one_heading_' . $i ) ) : ?>
-					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'section_one_heading_' . $i ) ); ?></h2>
+					<?php if ( get_theme_mod( 'about_heading_' . $i ) ) : ?>
+					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'about_heading_' . $i ) ); ?></h2>
 					<?php endif; ?>	
-					<?php if ( get_theme_mod( 'section_one_content_' . $i ) ) : ?>
+					<?php if ( get_theme_mod( 'about_content_' . $i ) ) : ?>
 					<div class="description">
-					<?php echo wp_kses_post( wpautop( get_theme_mod( 'section_one_content_' . $i ) ) ); ?>
+						<?php echo wp_kses_post( wpautop( get_theme_mod( 'about_content_' . $i ) ) ); ?>
 							<?php endif; ?>	
-							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
-							<a href="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>" class="more_link bg-clr-gld brd-round"><img
-								src="<?php echo get_template_directory_uri() . '/assets/images/arrow-right.png'; ?>"></a>
+							<?php if ( get_theme_mod( 'about_link_' . $i ) ) : ?>
+						<a href="<?php echo esc_url( get_theme_mod( 'about_link_' . $i ) ); ?>" class="more_link bg-clr-gld brd-round"><?php echo wp_kses_post( get_theme_mod( 'about_text_' . $i ) ); ?></a>
 								<?php endif; ?>	
 					</div>
 				</div>

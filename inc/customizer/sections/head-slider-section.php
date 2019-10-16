@@ -59,7 +59,7 @@ $wp_customize->add_control(
 
 // Setting.
 $wp_customize->add_setting(
-	'slider_button_label',
+	'slider_subtitle',
 	array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -69,34 +69,15 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Control(
 		$wp_customize,
-		'slider_button_label',
+		'slider_subtitle',
 		array(
-			'label'   => __( 'Button Label', 'luzdelaluna' ),
+			'label'   => __( 'Slider Sub-heading', 'luzdelaluna' ),
 			'section' => 'frontpage_slider',
 			'type'    => 'text',
 		)
 	)
 );
 
-$wp_customize->add_setting(
-	'slider_button_link',
-	array(
-		'default'           => '',
-		'sanitize_callback' => 'esc_url',
-	)
-);
-
-$wp_customize->add_control(
-	new WP_Customize_Control(
-		$wp_customize,
-		'slider_button_link',
-		array(
-			'label'   => __( 'Button Link', 'luzdelaluna' ),
-			'section' => 'frontpage_slider',
-			'type'    => 'text',
-		)
-	)
-);
 
 for ( $i = 1; $i <= 6;$i++ ) {
 	// Setting.
