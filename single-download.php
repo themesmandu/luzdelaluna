@@ -58,7 +58,7 @@ get_header();
 
     <div class="prd-description">
         <h5 class="bold-5 uppercase">Description</h5>
-        <p class="paragraph"><?php echo esc_html( $download->post_content ); ?></p>
+        <div class="paragraph"><?php echo wpautop(esc_html( $download->post_content )); ?></div>
     </div>
 
     <?php
