@@ -75,8 +75,8 @@ function luzdelaluna_show_gallery_box( $post ) {
 					<strong><?php echo esc_html( $field['name'] ); ?>:</strong>
 				</p>
 				<p>
-				<input type="url"  name="<?php echo esc_html( $field['id'] ); ?>" id="<?php echo esc_html( $field['id'] ); ?>" value="<?php echo esc_url( $meta ? $meta : '' ); ?>" placeholder="Upload or enter the file URL">
-				<button type="button" class="button" id="counseler-image_btn" data-media-uploader-target="#<?php echo esc_html( $field['id'] ); ?>"><?php echo esc_html__( 'Upload a File', 'luzdelaluna' ); ?></button>
+				<input type="url"  name="<?php echo esc_html( $field['id'] ); ?>" id="<?php echo esc_html( $field['id'] ); ?>" value="<?php echo esc_url( $meta ? $meta : '' ); ?>" placeholder="Upload or enter the image URL">
+				<button type="button" class="button" id="counseler-image_btn" data-media-uploader-target="#<?php echo esc_html( $field['id'] ); ?>"><?php echo esc_html__( 'Upload a Image', 'luzdelaluna' ); ?></button>
 				</p>
 				<?php
 				break;
