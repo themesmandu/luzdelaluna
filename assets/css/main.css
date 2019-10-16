@@ -647,12 +647,10 @@ section .sub-heading {
 }
 
 .section-about .more_link {
-    height: 34px;
-    width: 34px;
-    line-height: 32px;
-    display: block;
+    color: #ffffff;
     text-align: center;
     position: relative;
+    padding: 10px 15px;
 }
 
 .section-about .more_link:before {
@@ -663,7 +661,6 @@ section .sub-heading {
     bottom: 2px;
     right: 2px;
     left: 2px;
-    border-radius: 100%;
     transition: .3s;
 }
 

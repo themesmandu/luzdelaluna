@@ -41,6 +41,7 @@ get_header();
 
                     <figcaption>
                         <h3>Figure Name</h3>
+                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's standard dumy text.</p>
                     </figcaption>
                 </figure>
             </li>
