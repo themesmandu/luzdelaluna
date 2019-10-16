@@ -107,3 +107,42 @@ elseif ( is_single() ) :
 
 endif;
 
+
+function expanded_alowed_tags() {
+	$my_allowed = wp_kses_allowed_html( 'post' );
+	// iframe
+	$my_allowed['iframe'] = array(
+		'src'             => array(),
+		'height'          => array(),
+		'width'           => array(),
+		'frameborder'     => array(),
+		'allowfullscreen' => array(),
+	);
+	// form fields - input
+	$my_allowed['input'] = array(
+		'class' => array(),
+		'id'    => array(),
+		'name'  => array(),
+		'value' => array(),
+		'type'  => array(),
+	);
+	// select
+	$my_allowed['select'] = array(
+		'class' => array(),
+		'id'    => array(),
+		'name'  => array(),
+		'value' => array(),
+		'type'  => array(),
+	);
+	// select options
+	$my_allowed['option'] = array(
+		'selected' => array(),
+	);
+	// style
+	$my_allowed['style'] = array(
+		'types' => array(),
+	);
+
+	return $my_allowed;
+}
+

@@ -107,7 +107,7 @@ $wp_customize->add_setting(
 	'contact_map',
 	array(
 		'default'           => '',
-		'sanitize_callback' => 'wp_kses_post',
+		'sanitize_callback' => 'luzdelaluna_iframe_sanitize',
 	)
 );
 

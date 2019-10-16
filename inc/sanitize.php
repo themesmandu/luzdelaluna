@@ -92,3 +92,16 @@ if ( ! function_exists( 'luzdelaluna_switch_sanitize' ) ) {
 }
 
 
+/**
+ * Iframe sanitization
+ *
+ * @param  string       input value
+ * @return integer  Sanitized value
+ */
+if ( ! function_exists( 'luzdelaluna_iframe_sanitize' ) ) {
+	function luzdelaluna_iframe_sanitize( $input ) {
+		return wp_kses( $input, expanded_alowed_tags() );
+	}
+}
+
+
