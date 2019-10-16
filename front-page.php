@@ -40,7 +40,7 @@ get_header();
 						<?php echo wp_kses_post( wpautop( get_theme_mod( 'section_one_content_' . $i ) ) ); ?>
 							<?php endif; ?>	
 							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'section_one_link_' . $i ) ); ?>" class="more_link bg-clr-gld brd-round"><?php echo wp_kses_post( get_theme_mod( 'section_one_text_' . $i ) ); ?></a>
+						<a href="<?php echo esc_url( get_theme_mod( 'section_one_link_' . $i ) ); ?>" class="more_link bg-clr-gld"><?php echo wp_kses_post( get_theme_mod( 'section_one_text_' . $i ) ); ?></a>
 								<?php endif; ?>	
 					</div>
 				</div>
