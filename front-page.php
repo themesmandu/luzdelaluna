@@ -33,11 +33,11 @@ get_header();
 					<h6 class="clr-gold bold-5 sub-heading"><?php echo esc_html( get_theme_mod( 'section_one_subheading_' . $i ) ); ?></h6>
 					<?php endif; ?>	
 					<?php if ( get_theme_mod( 'section_one_heading_' . $i ) ) : ?>
-					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'section_one_heading_' . $i ) ); ?>.</h2>
+					<h2 class="section-heading"><?php echo esc_html( get_theme_mod( 'section_one_heading_' . $i ) ); ?></h2>
 					<?php endif; ?>	
 					<?php if ( get_theme_mod( 'section_one_content_' . $i ) ) : ?>
 					<div class="description">
-						<p><?php echo esc_html( get_theme_mod( 'section_one_content_' . $i ) ); ?></p>
+						<?php echo wp_kses_post( wpautop( get_theme_mod( 'section_one_content_' . $i ) ) ); ?>
 							<?php endif; ?>	
 							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
 						<a href="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>" class="more_link bg-clr-gld brd-round"><img
