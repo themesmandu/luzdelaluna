@@ -74,7 +74,7 @@
 			<div class="site-info col-right">
 			<?php if ( get_theme_mod( 'footer_copyright' ) ) : ?>
 				<h4 class="copyright"><?php echo esc_html( get_theme_mod( 'footer_copyright' ) ); ?><span
-						class="clr-white bold-3"><?php bloginfo( 'name' ); ?></span>
+						class="clr-white bold-3"> <?php bloginfo( 'name' ); ?></span>
 				</h4>
 				<?php endif; ?>
 			</div> <!-- .site-info -->

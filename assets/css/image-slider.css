@@ -49,6 +49,7 @@
     top: 50%;
     right: 20%;
     left: 20%;
+    max-width: 900px;
     transform: translateY(-50%);
 }
 
@@ -74,6 +75,13 @@
 .slide_caption span.large {
     font-size: 86px;
     position: unset;
+}
+
+.slide_caption .slider-sub-heading {
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+    line-height: 1.5;
+    animation: up .7s forwards;
 }
 
 .slide_caption .btn-uni {
@@ -139,5 +147,18 @@
     }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
+    .slide_caption {
+        right: 10%;
+        left: 10%;
+    }
+
+    .slide_caption span {
+        font-size: 38px;
+    }
+
+    .slide_caption .slider-heading,
+    .slide_caption span.large {
+        font-size: 62px;
+    }
 }

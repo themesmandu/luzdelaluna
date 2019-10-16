@@ -193,6 +193,10 @@ h6 {
 
 /* -- Added Other Created Styles  -- */
 
+.dir-rtl {
+    direction: rtl;
+}
+
 .col-count-2 {
     column-count: 2;
 }

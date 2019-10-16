@@ -56,7 +56,7 @@ get_header();
 					?>
 			</div>
 			<?php if ( get_theme_mod( 'contact_description' ) ) : ?>
-			<div class="col-lg-8 col-md-6 align-right">
+			<div class="col-lg-8 col-md-6 align-right dir-rtl">
 				<?php echo wp_kses( get_theme_mod( 'contact_map' ), expanded_alowed_tags() ); ?>
 			</div>
 			<?php endif; ?>
