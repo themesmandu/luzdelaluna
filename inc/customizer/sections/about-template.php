@@ -1,19 +1,20 @@
 <?php
 /**
- * Section one settings.
+ * About template settings.
  *
  * @package Luzdelaluna
  */
 
+
 /**
  *
- * Add Section Section one to Panel
+ * Add Section
  */
 $wp_customize->add_section(
-	'frontpage_section_one',
+	'about_options',
 	array(
-		'title' => __( 'Section One', 'luzdelaluna' ),
-		'panel' => 'frontpage_options',
+		'title'      => __( 'About Page', 'luzdelaluna' ),
+		'capability' => 'edit_theme_options',
 	)
 );
 
@@ -21,7 +22,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting image
 	$wp_customize->add_setting(
-		'section_one_image_' . $i,
+		'about_image_' . $i,
 		array(
 			'sanitize_callback' => 'absint',
 		)
@@ -30,9 +31,9 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Media_Control(
 			$wp_customize,
-			'section_one_image_' . $i,
+			'about_image_' . $i,
 			array(
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Featured Image %d', 'luzdelaluna' ), $i ),
 			)
@@ -41,7 +42,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting.
 	$wp_customize->add_setting(
-		'section_one_hover_content_' . $i,
+		'about_hover_content_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_textarea_field',
@@ -51,11 +52,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_hover_content_' . $i,
+			'about_hover_content_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Image Hover Content %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'textarea',
 			)
 		)
@@ -63,7 +64,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting.
 	$wp_customize->add_setting(
-		'section_one_subheading_' . $i,
+		'about_subheading_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
@@ -73,11 +74,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_subheading_' . $i,
+			'about_subheading_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Sub-heading %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'text',
 			)
 		)
@@ -85,7 +86,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting.
 	$wp_customize->add_setting(
-		'section_one_heading_' . $i,
+		'about_heading_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
@@ -95,11 +96,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_heading_' . $i,
+			'about_heading_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Heading %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'text',
 			)
 		)
@@ -107,7 +108,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting.
 	$wp_customize->add_setting(
-		'section_one_content_' . $i,
+		'about_content_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_textarea_field',
@@ -117,11 +118,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_content_' . $i,
+			'about_content_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Content %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'textarea',
 			)
 		)
@@ -129,7 +130,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting.
 	$wp_customize->add_setting(
-		'section_one_text_' . $i,
+		'about_text_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
@@ -139,11 +140,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_text_' . $i,
+			'about_text_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Text %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'text',
 			)
 		)
@@ -151,7 +152,7 @@ for ( $i = 1; $i <= 2; $i++ ) {
 
 	//setting link
 	$wp_customize->add_setting(
-		'section_one_link_' . $i,
+		'about_link_' . $i,
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'esc_url',
@@ -161,11 +162,11 @@ for ( $i = 1; $i <= 2; $i++ ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'section_one_link_' . $i,
+			'about_link_' . $i,
 			array(
 				/* translators: %d: image number. */
 				'label'   => sprintf( __( 'Text Link %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'type'    => 'text',
 			)
 		)
@@ -178,12 +179,9 @@ for ( $i = 1; $i <= 2; $i++ ) {
 			$wp_customize,
 			'separator_' . $i,
 			array(
-				'section' => 'frontpage_section_one',
+				'section' => 'about_options',
 				'content' => '<p><hr></p>',
 			)
 		)
 	);
 }
-
-
-

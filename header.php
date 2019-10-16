@@ -56,13 +56,10 @@
 									<?php if ( get_theme_mod( 'slider_title' ) ) : ?>
 								<h1 class="bold-8 slider-heading"><?php echo wp_kses_post( get_theme_mod( 'slider_title' ) ); ?></h1>
 									<?php endif; ?>	
-
-								<h3 class="clr-white bold-4 slider-sub-heading">Grow your business with spectacular branding, social media and marketing creatives.</h3>
-
-									<?php if ( get_theme_mod( 'slider_button_label' ) || get_theme_mod( 'slider_button_link' ) ) : ?>
-								<a href="<?php echo esc_url( get_theme_mod( 'slider_button_link' ) ); ?>" class="btn-uni"><?php echo esc_html( get_theme_mod( 'slider_button_label' ) ); ?></a>
-								<?php endif; ?>
-								</div>
+									<?php if ( get_theme_mod( 'slider_subtitle' ) ) : ?>
+								<h3 class="clr-white bold-4 slider-sub-heading"><?php echo wp_kses_post( get_theme_mod( 'slider_subtitle' ) ); ?></h3>
+								<?php endif; ?>		
+							</div>
 							</div>
 							<?php endif; ?>	
 						</li>
