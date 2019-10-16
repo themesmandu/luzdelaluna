@@ -1524,16 +1524,28 @@ section.widget p {
     opacity: .6;
 }
 
+.protfolio-gallery figcaption h3,
+.protfolio-gallery figcaption p {
+    position: relative;
+    z-index: 9;
+    color: #ffffff;
+    cursor: text;
+    opacity: 0;
+}
+
+.protfolio-gallery figure:hover h3,
+.protfolio-gallery figure:hover p {
+    opacity: 1;
+}
+
 .protfolio-gallery figcaption h3 {
     font-size: 24px;
     font-weight: 400;
-    color: #ffffff;
-    opacity: 0;
     transition: .3s;
 }
 
-.protfolio-gallery figure:hover h3 {
-    opacity: 1;
+.protfolio-gallery figcaption p{
+    margin-top: 15px;
 }
 
 /* -- Image Pop Up Styles On Portfolio -- */
