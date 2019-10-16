@@ -41,8 +41,8 @@ get_header();
 						<p><?php echo esc_html( get_theme_mod( 'section_one_content_' . $i ) ); ?></p>
 							<?php endif; ?>	
 							<?php if ( get_theme_mod( 'section_one_link_' . $i ) ) : ?>
-						<a href="#" class="more_link bg-clr-gld brd-round"><img
-								src="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>"></a>
+							<a href="<?php echo esc_url( get_theme_mod( 'section_one_link_' ) ); ?>" class="more_link bg-clr-gld brd-round"><img
+								src="<?php echo get_template_directory_uri() . '/assets/images/arrow-right.png'; ?>"></a>
 								<?php endif; ?>	
 					</div>
 				</div>

@@ -54,7 +54,7 @@
 							<div class="slide_caption">
 								<div class="slide_content">
 									<?php if ( get_theme_mod( 'slider_title' ) ) : ?>
-								<h1 class="bold-8 slider-heading"><?php echo esc_html( get_theme_mod( 'slider_title' ) ); ?></h1>
+								<h1 class="bold-8 slider-heading"><?php echo wp_kses_post( get_theme_mod( 'slider_title' ) ); ?></h1>
 									<?php endif; ?>	
 									<?php if ( get_theme_mod( 'slider_button_label' ) || get_theme_mod( 'slider_button_link' ) ) : ?>
 								<a href="<?php echo esc_url( get_theme_mod( 'slider_button_link' ) ); ?>" class="btn-uni"><?php echo esc_html( get_theme_mod( 'slider_button_label' ) ); ?></a>
