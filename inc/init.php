@@ -45,7 +45,12 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 	/**
 	* EDD custom constants.
 	*/
-	require get_template_directory() . '/inc/edd-modifications.php';
+	require get_template_directory() . '/inc/edd-customizations/edd-modifications.php';
+
+	/**
+	* EDD additional metaboxex.
+	*/
+	require get_template_directory() . '/inc/edd-customizations/additional-metaboxex.php';
 }
 
 /**

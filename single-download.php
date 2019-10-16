@@ -20,14 +20,30 @@ get_header();
 	<div class="row">
 		<figure class="single-prd-gallery col-md-5">
 			<div class="topimage">
+			<?php if ( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ) : ?>
 				<img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>" />
+				<?php elseif ( get_post_meta( $download_id, 'ecpt_gallery_one', true ) ) : ?>
+				<img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_one', true ) ); ?>" />
+				<?php elseif ( get_post_meta( $download_id, 'ecpt_gallery_two', true ) ) : ?>
+				<img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_two', true ) ); ?>" />
+				<?php elseif ( get_post_meta( $download_id, 'ecpt_gallery_three', true ) ) : ?>
+				<img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_three', true ) ); ?>" />
+				<?php endif; ?>
 			</div>
 
 			<ul class="single-gallery">
+			<?php if ( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ) : ?>
 				<li><img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $download_id ) ) ); ?>" /></li>
-				<li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-2.jpg" /></li>
-				<li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-3.jpg" /></li>
-				<li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/gall-4.jpg" /></li>
+				<?php endif; ?>
+				<?php if ( get_post_meta( $download_id, 'ecpt_gallery_one', true ) ) : ?>
+				<li><img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_one', true ) ); ?>" /></li>
+				<?php endif; ?>
+				<?php if ( get_post_meta( $download_id, 'ecpt_gallery_two', true ) ) : ?>
+				<li><img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_two', true ) ); ?>" /></li>
+				<?php endif; ?>
+				<?php if ( get_post_meta( $download_id, 'ecpt_gallery_three', true ) ) : ?>
+				<li><img src="<?php echo esc_url( get_post_meta( $download_id, 'ecpt_gallery_three', true ) ); ?>" /></li>
+				<?php endif; ?>
 			</ul>
 		</figure>
 
@@ -65,13 +81,11 @@ get_header();
 
 
 	// Check for current post category and add tax_query to the query arguments
-	$cats = wp_get_post_terms( get_the_ID(), 'download_category' );
-	//var_dump($cats);
+	$cats      = wp_get_post_terms( get_the_ID(), 'download_category' );
 	$cats_name = array();
 	foreach ( $cats as $luzdelaluna_related_cat ) {
 		$cats_name[] = $luzdelaluna_related_cat->name;
 	}
-	//var_dump( $cats_name );
 	if ( ! empty( $cats_name ) ) {
 			$args = array(
 				'post_type'      => 'download',
