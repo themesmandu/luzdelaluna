@@ -16,7 +16,7 @@ get_header();
 
 $args = array(
 	'post_type'      => 'download',
-	'posts_per_page' => 4,
+	'posts_per_page' => 12,
 	'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
 );
 
