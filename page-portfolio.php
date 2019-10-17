@@ -40,9 +40,11 @@ $portfolios = new WP_Query( $args );
 			?>
 		<div class="filter-wrap">
 			<button type="button" class="btn-uni filter active" data-rel="all">All</button>
-            <?php foreach ( $portfolio_terms as $portfolio_term ) : ?>
-
-			<button type="button" class="btn-uni filter" data-rel="<?php echo esc_html( $portfolio_term->name ); ?>"><?php echo esc_html( $portfolio_term->name ); ?></button>
+			<?php foreach ( $portfolio_terms as $portfolio_term ) : ?>
+				<?php
+				$stripped_term = str_replace( ' ', '', $portfolio_term->name );
+				?>
+			<button type="button" class="btn-uni filter" data-rel="<?php echo esc_html( $stripped_term ); ?>"><?php echo esc_html( $portfolio_term->name ); ?></button>
 			<?php endforeach; ?>
 		</div>
 
@@ -59,9 +61,12 @@ $portfolios = new WP_Query( $args );
 			while ( $portfolios->have_posts() ) :
 				$portfolios->the_post();
 				$portfolio_id = get_the_ID();
-				$terms        = wp_strip_all_tags( get_the_term_list( $portfolio_id, 'filters', '', ' ' ) );
+				$terms        = wp_strip_all_tags( get_the_term_list( $portfolio_id, 'filters', '', ',' ) );
+				$term_array   = explode( ',', $terms );
+
+
 				?>
-			<li class="all <?php echo esc_html( $terms ); ?>">
+			<li class="all <?php term_class( $term_array ); ?>">
 				<figure>
 					<img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $portfolio_id ) ) ); ?>"
 						class="thumbnail-pop" />

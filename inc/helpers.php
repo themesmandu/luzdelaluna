@@ -146,3 +146,14 @@ function expanded_alowed_tags() {
 	return $my_allowed;
 }
 
+function term_class( $terms ) {
+	if ( is_array( $terms ) ) {
+		foreach ( $terms as $term ) {
+			$stripped_term = str_replace( ' ', '', $term );
+			echo esc_html( $stripped_term ) . ' ';
+		}
+	} else {
+		$stripped_term = str_replace( ' ', '', $term );
+		echo esc_html( $stripped_term );
+	}
+}
