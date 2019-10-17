@@ -13,137 +13,72 @@
  */
 
 get_header();
+
+$args = array(
+	'post_type'      => 'portfolio',
+	'posts_per_page' => -1,
+);
+
+$portfolios = new WP_Query( $args );
 ?>
 
 <div class="container">
-    <div id="portfolio" class="portfolio">
+	<div id="portfolio" class="portfolio">
 
-        <div class="filter-wrap">
-            <button type="button" class="btn-uni filter active" data-rel="all">All</button>
-            <button type="button" class="btn-uni filter" data-rel="1">Typography</button>
-            <button type="button" class="btn-uni filter" data-rel="2">Branding</button>
-            <button type="button" class="btn-uni filter" data-rel="3">Illustration</button>
-        </div>
+		<?php
+			$portfolio_terms = get_terms(
+				array(
+					'taxonomy'   => 'filters',
+					'parent'     => 0,
+					'hide_empty' => false,
+				)
+			);
 
-        <div class="imageapear">
-            <figure>
-                <i class="fas fa-times"></i>
-                <img src="">
-            </figure>
-        </div>
 
-        <ul class="protfolio-gallery" id="gallery">
 
-            <li class="all 1">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/1.jpg"
-                        class="thumbnail-pop" />
 
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                        <p>Lorem Ipsum is simply dummy textprinting and nice industry. Lorem Ipsum has been industry's standard dumy text.</p>
-                    </figcaption>
-                </figure>
-            </li>
+			?>
+		<div class="filter-wrap">
+			<button type="button" class="btn-uni filter active" data-rel="all">All</button>
+            <?php foreach ( $portfolio_terms as $portfolio_term ) : ?>
 
-            <li class="all 1">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/2.jpg"
-                        class="thumbnail-pop" />
+			<button type="button" class="btn-uni filter" data-rel="<?php echo esc_html( $portfolio_term->name ); ?>"><?php echo esc_html( $portfolio_term->name ); ?></button>
+			<?php endforeach; ?>
+		</div>
 
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
+		<div class="imageapear">
+			<figure>
+				<i class="fas fa-times"></i>
+				<img src="">
+			</figure>
+		</div>
 
-            <li class="all 1">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/3.jpg"
-                        class="thumbnail-pop" />
+		<ul class="protfolio-gallery" id="gallery">
+		<?php
+		if ( $portfolios->have_posts() ) :
+			while ( $portfolios->have_posts() ) :
+				$portfolios->the_post();
+				$portfolio_id = get_the_ID();
+				$terms        = wp_strip_all_tags( get_the_term_list( $portfolio_id, 'filters', '', ' ' ) );
+				?>
+			<li class="all <?php echo esc_html( $terms ); ?>">
+				<figure>
+					<img src="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $portfolio_id ) ) ); ?>"
+						class="thumbnail-pop" />
 
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
+					<figcaption>
+						<h3><?php echo esc_html( get_the_title() ); ?></h3>
+						<p><?php echo esc_html( get_the_content() ); ?></p>
+					</figcaption>
+				</figure>
+			</li>
+				<?php
+			endwhile;
+		endif;
+		?>
 
-            <li class="all 1">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/4.jpg"
-                        class="thumbnail-pop" />
-
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 2">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/5.jpg"
-                        class="thumbnail-pop" />
-
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 2">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/6.jpg"
-                        class="thumbnail-pop" />
-
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 3">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/7.jpg"
-                        class="thumbnail-pop" />
-
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>            
-
-            <li class="all 1 3">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/8.jpg"
-                        class="thumbnail-pop" />
-
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 3">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/9.jpg"
-                        class="thumbnail-pop" />
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li class="all 1 3">
-                <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-one.jpg"
-                        class="thumbnail-pop" />
-                    <figcaption>
-                        <h3>Figure Name</h3>
-                    </figcaption>
-                </figure>
-            </li>
-        </ul>
-    </div>
+		</ul>
+	</div>
 </div>
 
 <?php

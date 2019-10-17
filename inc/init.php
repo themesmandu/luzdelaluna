@@ -36,6 +36,11 @@ require get_template_directory() . '/inc/sanitize.php';
 require get_template_directory() . '/inc/helpers.php';
 
 /**
+ * CPT register.
+ */
+require get_template_directory() . '/inc/cpt/cpt-and-taxonomy.php';
+
+/**
  * Include tgm required plaugins functionality.
  */
 require get_template_directory() . '/inc/tgm-plugin/tgm-required-plugins.php';
