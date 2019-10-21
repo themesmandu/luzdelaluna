@@ -64,7 +64,7 @@ elseif ( is_singular( 'download' ) ) :
 <div class="page-content">
 	<div class="container">
 		<h1 class="header-heading uppercase">
-			<?php printf( esc_html__( 'Single Shop', 'luzdelaluna' ), get_search_query() ); ?></h1>
+			<?php esc_html__( 'Single Shop', 'luzdelaluna' ); ?></h1>
 	</div>
 </div>
 	<?php
@@ -74,7 +74,7 @@ elseif ( is_single() ) :
 <div class="page-content">
 	<div class="container">
 		<h1 class="header-heading uppercase">
-			<?php printf( esc_html__( 'Single Blog', 'luzdelaluna' ), get_search_query() ); ?></h1>
+			<?php esc_html__( 'Single Blog', 'luzdelaluna' ); ?></h1>
 	</div>
 </div>
 	<?php
@@ -156,4 +156,23 @@ function term_class( $terms ) {
 		$stripped_term = str_replace( ' ', '', $term );
 		echo esc_html( $stripped_term );
 	}
+}
+
+
+function get_custom_logo_second() {
+	$html                  = '';
+	$custom_logo_second_id = get_theme_mod( 'second_logo' );
+	if ( $custom_logo_second_id ) {
+		$custom_logo_second_attr = array(
+			'class' => 'custom-logo',
+		);
+		$html                    = sprintf(
+			'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+			esc_url( home_url( '/' ) ),
+			wp_get_attachment_image( $custom_logo_second_id, 'full', false, $custom_logo_second_attr )
+		);
+	}
+
+	return $html;
+
 }

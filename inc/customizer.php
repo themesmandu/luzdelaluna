@@ -56,7 +56,7 @@ function luzdelaluna_customize_register( $wp_customize ) {
 	* Post page section.
 	*/
 	require get_template_directory() . '/inc/customizer/sections/post-page-section.php';
-	
+
 	/**
 	* About page section.
 	*/
@@ -104,6 +104,32 @@ function luzdelaluna_customize_register( $wp_customize ) {
 	* Section instagram.
 	*/
 	require get_template_directory() . '/inc/customizer/sections/front-page/section-instagram.php';
+
+	// Setting logo otheer than homepage
+	$wp_customize->add_setting(
+		'second_logo',
+		array(
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'second_logo',
+			array(
+				'section'       => 'title_tagline',
+				'label'         => __( 'Logo ( Other Pages )', 'luzdelaluna' ),
+				'description'   => __( 'Note: This logo appears in pages other than front page', 'luzdelaluna' ),
+				'width'         => 250,
+				'height'        => 80,
+				'priority'      => '8',
+				'button_labels' => array( // Optional
+					'select' => __( 'Select Logo' ),
+				),
+			)
+		)
+	);
 
 }
 add_action( 'customize_register', 'luzdelaluna_customize_register' );
