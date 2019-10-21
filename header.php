@@ -55,10 +55,7 @@
 								<div class="slide_content">
 									<?php if ( get_theme_mod( 'slider_title' ) ) : ?>
 								<h1 class="bold-8 slider-heading"><?php echo wp_kses_post( get_theme_mod( 'slider_title' ) ); ?></h1>
-									<?php endif; ?>	
-									<?php if ( get_theme_mod( 'slider_subtitle' ) ) : ?>
-								<h3 class="clr-white bold-4 slider-sub-heading"><?php echo wp_kses_post( get_theme_mod( 'slider_subtitle' ) ); ?></h3>
-								<?php endif; ?>		
+									<?php endif; ?>		
 							</div>
 							</div>
 							<?php endif; ?>	

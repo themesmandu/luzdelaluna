@@ -28,7 +28,7 @@ get_header();
                     <ul class="address">
                         <?php if ( get_theme_mod( 'contact_address' ) ) : ?>
                         <li>
-                            <span class="uppercase bold-7"><?php echo esc_html__( 'Address', 'luzdelaluna' ); ?></span>
+                            <span class="uppercase bold-7"><?php echo esc_html__( 'Ofice Hours', 'luzdelaluna' ); ?></span>
                             <h5 class="bold-5"><?php echo esc_html( get_theme_mod( 'contact_address' ) ); ?></h5>
                         </li>
                         <?php endif; ?>

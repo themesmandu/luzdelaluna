@@ -3038,7 +3038,7 @@ jQuery(document).ready(function ($) {
             autoplay: true,
             arrows: false,
             autoplaySpeed: 4000,
-            dots: true,
+            dots: false,
             fade: true,
             speed: 500,
             infinite: true,

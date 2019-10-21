@@ -41,7 +41,7 @@
 }
 
 .navbar-expand-lg .navbar-nav .menu-item-has-children .sub-menu .menu-item:hover .nav-link {
-    border-color: #c3a165;
+    border-color: #bb7874;
     color: #ffffff;
     z-index: 1;
     position: relative;
@@ -60,7 +60,7 @@
 .navbar-expand-lg .navbar-nav .menu-item-has-children .sub-menu .menu-item:hover .nav-link:before {
     width: 100%;
     z-index: -1;
-    background-color: #c3a165;
+    background-color: #bb7874;
 }
 
 .menu-item-has-children:after {
@@ -80,7 +80,7 @@
 }
 
 .current-menu-item.menu-item-has-children:after {
-    color: #c3a165;
+    color: #bb7874;
 }
 
 .sub-menu .menu-item-has-children::after {
@@ -170,7 +170,7 @@
     }
 
     .navbar-expand-lg .navbar-nav .current-menu-item .caret:after {
-        color: #c3a165;
+        color: #bb7874;
     }
 
     .main-navigation .navbar-nav .menu-item.menu-open>ul {
