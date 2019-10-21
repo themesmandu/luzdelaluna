@@ -16,9 +16,9 @@ get_header();
 
 <section class="section-about">
     <div class="container">
-        <?php if ( get_theme_mod( 'slider_subtitle' ) ) : ?>
+        <?php if ( get_theme_mod( 'section_one_subtitle' ) ) : ?>
         <h3 class="bold-7 slider-sub-heading align-center">
-            <?php echo wp_kses_post( get_theme_mod( 'slider_subtitle' ) ); ?></h3>
+            <?php echo wp_kses_post( get_theme_mod( 'section_one_subtitle' ) ); ?></h3>
         <?php endif; ?>
         <?php for ( $i = 1; $i <= 2; $i++ ) : ?>
         <div class="row <?php echo ( 2 === $i ? 'row-right' : '' ); ?>">
@@ -65,7 +65,7 @@ get_header();
         <?php
 				$active_testimonials = array();
 		for ( $i = 1; $i <= 6; $i++ ) {
-			if ( get_theme_mod( 'testimonial_image_' . $i ) ) {
+			if ( get_theme_mod( 'testimonial_content_' . $i ) ) {
 				$active_testimonials[] = $i;
 			}
 		}
@@ -76,8 +76,10 @@ get_header();
                 <div class="reviewslide">
                     <?php foreach ( $active_testimonials as $key => $testimonial_id ) : ?>
                     <div class="rev-slide">
+                    <?php if ( get_theme_mod( 'testimonial_image_' . $testimonial_id ) ) : ?>
                         <img
                             src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'testimonial_image_' . $testimonial_id ) ) ); ?>" />
+                            <?php endif; ?>
                         <?php if ( get_theme_mod( 'testimonial_content_' . $testimonial_id ) ) : ?>
                         <p><?php echo esc_html( get_theme_mod( 'testimonial_content_' . $testimonial_id ) ); ?></p>
                         <?php endif; ?>

@@ -17,6 +17,27 @@ $wp_customize->add_section(
 	)
 );
 
+// Setting.
+$wp_customize->add_setting(
+	'section_one_subtitle',
+	array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Control(
+		$wp_customize,
+		'section_one_subtitle',
+		array(
+			'label'   => __( 'Section One Sub-heading', 'luzdelaluna' ),
+			'section' => 'frontpage_section_one',
+			'type'    => 'text',
+		)
+	)
+);
+
 for ( $i = 1; $i <= 2; $i++ ) {
 
 	// Setting image
@@ -39,27 +60,6 @@ for ( $i = 1; $i <= 2; $i++ ) {
 		)
 	);
 
-	// Setting.
-	$wp_customize->add_setting(
-		'section_one_hover_content_' . $i,
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_textarea_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'section_one_hover_content_' . $i,
-			array(
-				/* translators: %d: image number. */
-				'label'   => sprintf( __( 'Image Hover Content %d', 'luzdelaluna' ), $i ),
-				'section' => 'frontpage_section_one',
-				'type'    => 'textarea',
-			)
-		)
-	);
 
 	// Setting.
 	$wp_customize->add_setting(

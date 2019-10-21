@@ -40,27 +40,6 @@ for ( $i = 1; $i <= 2; $i++ ) {
 		)
 	);
 
-	// Setting.
-	$wp_customize->add_setting(
-		'about_hover_content_' . $i,
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_textarea_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'about_hover_content_' . $i,
-			array(
-				/* translators: %d: image number. */
-				'label'   => sprintf( __( 'Image Hover Content %d', 'luzdelaluna' ), $i ),
-				'section' => 'about_options',
-				'type'    => 'textarea',
-			)
-		)
-	);
 
 	// Setting.
 	$wp_customize->add_setting(
