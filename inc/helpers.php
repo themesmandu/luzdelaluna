@@ -167,7 +167,7 @@ function get_custom_logo_second() {
 			'class' => 'custom-logo',
 		);
 		$html                    = sprintf(
-			'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+			'<a href="%1$s" class="custom-logo-link second" rel="home">%2$s</a>',
 			esc_url( home_url( '/' ) ),
 			wp_get_attachment_image( $custom_logo_second_id, 'full', false, $custom_logo_second_attr )
 		);

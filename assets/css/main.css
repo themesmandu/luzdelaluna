@@ -390,6 +390,16 @@ body.search .list-item a:hover,
     padding: 0;
 }
 
+.home .main-navigation .custom-logo-link.second,
+.home .main-navigation.fixed .custom-logo-link {
+    display: block;
+}
+
+.home .main-navigation.fixed .custom-logo-link.second,
+.home .main-navigation .custom-logo-link {
+    display: none;
+}
+
 .home .navbar-expand-lg .navbar-nav .nav-link,
 .home .navbar-brand {
     color: #ffffff;

@@ -35,8 +35,9 @@
 					<?php
 				endif;
 			} else {
-				if ( is_front_page() && is_home() ) :
+				if ( is_front_page() ) :
 					the_custom_logo();
+					echo wp_kses_post( get_custom_logo_second() );
 				else :
 					echo wp_kses_post( get_custom_logo_second() );
 				endif;

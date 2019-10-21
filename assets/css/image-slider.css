@@ -48,14 +48,15 @@
     position: absolute;
     top: 50%;
     right: 20%;
-    left: 20%;
+    left: 10%;
     max-width: 900px;
-    transform: translateY(-50%);
+    transform: translateY(-20%);
 }
 
 .slide_caption .slider-heading {
     font-size: 68px;
     color: #ffffff;
+    text-shadow: 2px 2px #bb7874;
     margin: 0;
     animation: up .7s forwards;
 }
@@ -66,6 +67,7 @@
     font-weight: 400;
     font-style: italic;
     color: #bb7874;
+    text-shadow: none;
 }
 
 .slide_caption span.txt-above {
