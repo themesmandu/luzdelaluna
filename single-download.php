@@ -74,7 +74,7 @@ get_header();
 
 	<div class="prd-description">
 		<h5 class="bold-5 uppercase tag-heading">Description</h5>
-		<div class="paragraph"><?php the_content(); ?></div>
+		<div class="paragraph"><?php echo wp_kses_post(apply_filters( 'the_content',$download->post_content )); ?></div>
 	</div>
 
 	<?php
