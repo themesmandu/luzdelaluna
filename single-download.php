@@ -74,7 +74,7 @@ get_header();
 
 	<div class="prd-description">
 		<h5 class="bold-5 uppercase tag-heading">Description</h5>
-		<div class="paragraph"><?php echo _( $download->post_content ); ?></div>
+		<div class="paragraph"><?php the_content(); ?></div>
 	</div>
 
 	<?php
