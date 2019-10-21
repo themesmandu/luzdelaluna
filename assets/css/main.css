@@ -1,3 +1,10 @@
+/* -- Font ( HeyAlice-Regular ) -- */
+
+@font-face{
+	font-family: "HeyAlice";
+	src: url('../fonts/HeyAlice-Regular.otf') format('opentype');
+}
+
 @import "dropdown.css";
 @import "image-slider.css";
 
@@ -772,6 +779,10 @@ section .sub-heading {
 }
 
 /* -- Section Instagram Styles -- */
+
+.section-instagram .section-heading {
+    font-family: HeyAlice;
+}
 
 .insta-content {
     margin: 52px 0 0;
