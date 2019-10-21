@@ -88,6 +88,10 @@
         max-width: 540px;
     }
 
+    .slider-sub-heading {
+        font-size: 32px;
+    }
+
     .section-about .column-right {
         margin-top: 60px;
     }
@@ -97,8 +101,27 @@
         margin: 0 0 30px;
     }
 
+    .section-about .column-row {
+        margin-top: 15px;
+    }
+
+    .column-row .description p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .section-about .section-heading {
+        font-size: 24px;
+    }
+
+    .section-about .row-right {
+        margin-top: 48px;
+    }
+
+    .section-about .row-right .col-right,
     .section-about .column-right .col-right {
         order: unset;
+        margin-top: 15px;
     }
 
     #services .row-wrap {
@@ -187,6 +210,10 @@
 
     .section-heading {
         font-size: 38px;
+    }
+
+    .section-instagram .section-heading {
+        font-size: 52px;
     }
 
     .content-wrap {

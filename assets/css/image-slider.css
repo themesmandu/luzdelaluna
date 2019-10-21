@@ -152,8 +152,7 @@
     .slide_caption {
         right: 15px;
         left: 15px;
-        bottom: 15px;
-        top: unset;
+        top: 35%;
         transform: unset;
     }
 

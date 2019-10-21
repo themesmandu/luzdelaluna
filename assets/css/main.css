@@ -1,12 +1,12 @@
+@import "dropdown.css";
+@import "image-slider.css";
+
 /* -- Font ( HeyAlice-Regular ) -- */
 
 @font-face{
 	font-family: "HeyAlice";
-	src: url('../fonts/HeyAlice-Regular.otf') format('opentype');
+	src: url('../font/HeyAlice-Regular.otf') format('opentype');
 }
-
-@import "dropdown.css";
-@import "image-slider.css";
 
 
 /* -- All Basic Styles Of Theme -- */
@@ -633,8 +633,9 @@ section .sub-heading {
     color: #000000;
     text-align: center;
     position: relative;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .section-about .more_link:before {
@@ -782,6 +783,10 @@ section .sub-heading {
 
 .section-instagram .section-heading {
     font-family: HeyAlice;
+    font-size: 82px;
+    text-transform: none;
+    margin-bottom: 38px;
+    line-height: 1.5;
 }
 
 .insta-content {

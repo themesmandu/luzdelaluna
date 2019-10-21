@@ -22,11 +22,6 @@ get_header();
 			<div class="col-md-6 column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
 				<figure>
 					<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'about_image_' . $i ) ) ); ?>" />
-					<?php if ( get_theme_mod( 'about_hover_content_' . $i ) ) : ?>
-					<figcaption>
-						<p><?php echo esc_html( get_theme_mod( 'about_hover_content_' . $i ) ); ?></p>
-					</figcaption>
-					<?php endif; ?>	
 				</figure>
 
 				<div class="col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
