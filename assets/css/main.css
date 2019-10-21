@@ -720,12 +720,13 @@ section .sub-heading {
 
 .rev-slide .client-name {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: #1e1e1e;
     margin: 26px 0 0;
 }
 
 .client-name span {
+    font-weight: 500;
     text-transform: none;
     display: block;
     margin-top: 5px;
@@ -784,6 +785,7 @@ section .sub-heading {
 .section-instagram .section-heading {
     font-family: HeyAlice;
     font-size: 82px;
+    font-weight: normal;
     text-transform: none;
     margin-bottom: 38px;
     line-height: 1.5;
