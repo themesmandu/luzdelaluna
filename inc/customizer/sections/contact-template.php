@@ -39,6 +39,25 @@ $wp_customize->add_control(
 	)
 );
 
+// Setting image
+$wp_customize->add_setting(
+	'contact_image',
+	array(
+		'sanitize_callback' => 'absint',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Media_Control(
+		$wp_customize,
+		'contact_image',
+		array(
+			'section' => 'contact_options',
+			'label'   =>  __( 'Contact Image', 'luzdelaluna' ),
+		)
+	)
+);
+
 // Setting.
 $wp_customize->add_setting(
 	'contact_address',

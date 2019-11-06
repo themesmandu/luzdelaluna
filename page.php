@@ -16,12 +16,9 @@ get_header();
 ?>
 
 <div class="container">
-	<div class="row">
+    <main id="main" class="site-main">
 
-	<div id="primary" class="content-area<?php luzdelaluna_content_class(); ?>">
-		<main id="main" class="site-main">
-
-		<?php
+        <?php
 		while ( have_posts() ) :
 			the_post();
 
@@ -35,15 +32,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-/* Get Sidebar #secondary */
-get_sidebar();
-?>
-
-	</div><!-- /.row -->
+    </main><!-- #main -->
 </div><!-- /.container -->
 
 <?php

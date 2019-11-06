@@ -18,7 +18,9 @@ get_header();
 <div class="container">
 	<div id="services" class="services">
 	<?php if ( get_theme_mod( 'services_desc' ) ) : ?>
-		<h4 class="sub-heading align-center bold-4"><?php echo esc_html( get_theme_mod( 'services_desc' ) ); ?></h4>
+		<div class="sub-description">
+			<?php echo wp_kses_post( get_theme_mod( 'services_desc' ) ); ?>
+		</div>
 			<?php endif; ?>
 
 		<div class="row-wrap box-shadow bg-clr-white">
@@ -93,6 +95,32 @@ get_header();
 							<?php endif; ?>
 							<?php if ( get_theme_mod( 'services_link_text_3' ) ) : ?>
 						<a href="<?php echo esc_url( get_theme_mod( 'services_link_3' ) ); ?>" class="more_link uppercase"><?php echo esc_html( get_theme_mod( 'services_link_text_3' ) ); ?></a>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div><!-- .row-wrap -->
+
+		<div class="row-wrap box-shadow bg-clr-white">
+			<div class="row">
+				<div class="column col-image col-left">
+					<figure>
+						<img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'services_image_4' ) ) ); ?>"
+							class="thumbnail-right" />
+					</figure>
+				</div>
+
+				<div class="column col-text col-right align-right">
+					<div class="col-content">
+						<span class="sn_number">04</span>
+						<?php if ( get_theme_mod( 'services_heading_4' ) ) : ?>
+						<h3 class="uppercase bold-8"><?php echo esc_html( get_theme_mod( 'services_heading_4' ) ); ?></h3>
+						<?php endif; ?>
+						<?php if ( get_theme_mod( 'services_desc_4' ) ) : ?>
+						<p><?php echo esc_html( get_theme_mod( 'services_desc_4' ) ); ?></p>
+							<?php endif; ?>
+							<?php if ( get_theme_mod( 'services_link_text_4' ) ) : ?>
+						<a href="<?php echo esc_url( get_theme_mod( 'services_link_4' ) ); ?>" class="more_link uppercase"><?php echo esc_html( get_theme_mod( 'services_link_text_4' ) ); ?></a>
 						<?php endif; ?>
 					</div>
 				</div>

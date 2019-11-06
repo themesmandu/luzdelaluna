@@ -68,8 +68,8 @@ jQuery(document).ready(function ($) {
 
     // Contact Form Seven Added Classs On Textarea P
 
-    $('.contact-form .wpcf7-form-control-wrap').parent().addClass('inline');
-    $('.contact-form .your-message').parent().removeClass('inline');
+    $('.contact-form .wpcf7-form-control-wrap').parent().parent().addClass('inline');
+    $('.contact-form .your-message').parent().parent().removeClass('inline');
 
     // Image pop up
 

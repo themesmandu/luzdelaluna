@@ -52,7 +52,7 @@ $wp_customize->add_control(
 	)
 );
 
-for ( $i = 1; $i <= 3; $i++ ) {
+for ( $i = 1; $i <= 4; $i++ ) {
 	// Setting.
 	$wp_customize->add_setting(
 		'services_heading_' . $i,

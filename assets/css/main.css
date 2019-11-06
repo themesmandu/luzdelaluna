@@ -223,6 +223,10 @@ h6 {
     text-align: left;
 }
 
+.align-justify {
+    text-align: justify;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -574,7 +578,6 @@ section {
     font-size: 52px;
     font-weight: 800;
     line-height: 1.1;
-    text-transform: uppercase;
 }
 
 section .sub-heading {
@@ -605,38 +608,58 @@ section .sub-heading {
     flex-wrap: wrap;
 }
 
-.section-about .section-heading {
+.section-about .section-heading,
+.column-row .description p {
+    font-family: HeyAlice;
     font-size: 42px;
-    font-weight: 600;
-    font-style: italic;
+    font-weight: 400;
     color: #bb7874;
     text-transform: none;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
-.section-about .col-right .section-heading {
+.section-about .column-row .section-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    color: inherit;
+    line-height: 1.5;
+}
+
+.column-row .sub-heading {
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.section-about .col-content .sub-heading,
+.row-heading {
+    font-family: HeyAlice;
+    font-size: 56px;
+    text-transform: none;
+    margin-bottom: 28px;
+}
+
+.section-about .col-content .section-heading {
+    font-size: 28px;
+    color: #212529;
+    font-style: normal;
+}
+
+.row-heading {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 45px;
 }
 
 .section-about .description {
     margin: 28px 0 0 0;
-}
-
-.column-row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.column-row .description {
-    order: -1;
-    margin: 0;
-}
-
-.column-row .description p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    line-height: 1.5;
 }
 
 .section-about .more_link {
@@ -670,6 +693,9 @@ section .sub-heading {
 }
 
 .section-testimonial .section-heading {
+    font-family: HeyAlice;
+    font-size: 72px;
+    font-weight: 400;
     position: relative;
 }
 
@@ -1333,19 +1359,56 @@ section.widget p {
     margin-bottom: 4px;
 }
 
+/* -- Default Page Template Style -- */
+
+.page-template-default .card-body {
+    padding: 0;
+}
+
+.prd-description .paragraph h1,
+.prd-description .paragraph h2,
+.prd-description .paragraph h3,
+.prd-description .paragraph h4,
+.page-template-default .entry-content h1,
+.page-template-default .entry-content h2,
+.page-template-default .entry-content h3,
+.page-template-default .entry-content h4 {
+    font-family: HeyAlice;
+    font-weight: 400;
+    margin-bottom: 26px;
+}
+
+.prd-description .paragraph ul,
+.page-template-default .entry-content ul {
+    margin-left: 42px;
+}
+
+.prd-description .paragraph li,
+.page-template-default .entry-content li {
+    font-size: 15px;
+    margin-bottom: 18px;
+    list-style-type: disc;
+}
+
 /* -- Services Page Template Style -- */
 
 .page-template-page-services #content {
     background-color: #f8f8f8;
 }
 
-#services .sub-heading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: rgba(30, 30, 30, 0.8);
-    max-width: 870px;
-    margin: 0 auto 85px;
-    line-height: 1.7;
+#services .sub-description h1,
+#services .sub-description h2,
+#services .sub-description h3,
+#services .sub-description h4,
+#services .sub-description h5,
+#services .sub-description h6 {
+    font-family: HeyAlice;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+#services .sub-description p {
+    margin-bottom: 5px;
 }
 
 #services .row-wrap {
@@ -1568,6 +1631,62 @@ section.widget p {
 
 .imageapear figure img.show {
     transform: scale(1);
+    height: 100%;
+}
+
+/* -- About Page Template Styles -- */
+
+.page-template-page-about .about-row-col {
+    margin-bottom: 82px;
+}
+
+.page-template-page-about .row:first-child {
+    margin-bottom: 45px;
+}
+
+.page-template-page-about .col-right .section-heading,
+.abot-portfolio h1,
+.abot-portfolio h2,
+.abot-portfolio h3,
+.abot-portfolio h4 {
+    font-family: HeyAlice;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-style: normal;
+    color: #bb7874;
+}
+
+.page-template-page-about .section-about .more_link {
+    display: table;
+    margin: 32px auto 0;
+}
+
+.abot-portfolio h1,
+.abot-portfolio h2,
+.abot-portfolio h3,
+.abot-portfolio h4 {
+    margin-bottom: 18px;
+}
+
+.abot-portfolio h1 {
+    font-size: 48px;
+}
+
+.abot-portfolio h2 {
+    font-size: 42px;
+}
+
+.abot-portfolio h3 {
+    font-size: 36px;
+}
+
+.abot-portfolio li {
+    margin-bottom: 10px;
+}
+
+.abot-portfolio li i {
+    font-size: 14px;
 }
 
 /* -- Contact Page Template Styles -- */
@@ -1579,6 +1698,10 @@ section.widget p {
 
 .page-sub-heading {
     font-size: 18px;
+}
+
+.contact-image {
+    margin-bottom: 15px;
 }
 
 #contact .address {
@@ -1620,6 +1743,10 @@ section.widget p {
     color: #cccccc;
 }
 
+#contact .social-nav a[href]:hover:before {
+    color: #bb7874;
+}
+
 .contact-form {
     text-align: right;
     max-width: 650px;
@@ -1640,8 +1767,15 @@ section.widget p {
     margin-left: 30px;
 }
 
-.contact-form .inline:nth-child(2) {
+.contact-form .inline:nth-child(2),
+.contact-form .inline:nth-child(4) {
     margin-left: 0;
+}
+
+.contact-form .inline select {
+    border: none;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.07);
+    cursor: pointer;
 }
 
 .contact-form input,
