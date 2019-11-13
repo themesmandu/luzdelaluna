@@ -1,5 +1,10 @@
 /* Dropdown Styles -- */
 
+.menu-item-has-children .nav-link {
+    pointer-events: none;
+    cursor: default;
+}
+
 .main-navigation .sub-menu {
     top: 100%;
     width: 200px;
@@ -38,6 +43,8 @@
     display: block;
     border: none;
     border-bottom: 1px solid #e2e2e2;
+    pointer-events: unset;
+    cursor: pointer;
 }
 
 .navbar-expand-lg .navbar-nav .menu-item-has-children .sub-menu .menu-item:hover .nav-link {
@@ -105,7 +112,7 @@
     }
 
     .main-navigation .navbar-nav .sub-menu .menu-item {
-        padding: 0;
+        margin: 0;
         display: block;
         box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .25);
     }
@@ -160,7 +167,7 @@
         font-weight: 900;
         font-size: 9px;
         content: "\f078";
-        color: #252525;
+        color: #ffffff;
         display: inline-block;
         padding: 5px;
     }
@@ -297,13 +304,17 @@
     #navbarmenus .sub-menu .sub-menu {
         text-align: left;
         background: transparent;
-        padding-left: 20px;
+        padding-left: 0;
         width: auto;
         box-shadow: none;
     }
 
     #navbarmenus .navbar-nav .menu-item .sub-menu .menu-item {
         border: none;
+    }
+
+    #navbarmenus .navbar-nav .menu-item .sub-menu .menu-item .nav-link {
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
     }
 
     .main-navigation .sub-menu {
@@ -335,6 +346,12 @@
     .main-navigation .navbar-nav .menu-item.menu-open>ul ul {
         right: unset;
         left: unset;
+    }
+
+    .navbar-expand-lg .navbar-nav .menu-item-has-children .sub-menu .menu-item .nav-link:before {
+        width: 100%;
+        z-index: -1;
+        background-color: #bb7874;
     }
 }
 

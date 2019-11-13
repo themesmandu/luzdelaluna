@@ -11,19 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-<?php
-	the_post_thumbnail(
-		'luzdelaluna-featured-900-600',
-		array(
-			'class' => 'img-fluid mb-2',
-		)
-	);
-	?>
+    <figure>
+        <?php the_post_thumbnail(); ?>
+    </figure>
 
-<div class="card-body">
+    <div class="card-body">
 
-	<div class="entry-content">
-		<?php
+        <div class="entry-content">
+            <?php
 		the_content();
 
 		wp_link_pages(
@@ -33,11 +28,11 @@
 			)
 		);
 		?>
-	</div>
+        </div>
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
+        <?php if ( get_edit_post_link() ) : ?>
+        <footer class="entry-footer">
+            <?php
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current page */
@@ -48,8 +43,8 @@
 					'</span></footer>'
 				);
 			?>
-		</footer>
-	<?php endif; ?>
+        </footer>
+        <?php endif; ?>
 
-</div><!-- .card-body -->
+    </div><!-- .card-body -->
 </article><!-- #post-<?php the_ID(); ?> -->
