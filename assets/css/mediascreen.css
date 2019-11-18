@@ -65,6 +65,10 @@
         justify-content: center;
     }
 
+    .last-footer-wraper {
+        display: block;
+    }
+
     #footer .column-center,
     #footer .navbar-brand {
         width: 100%;

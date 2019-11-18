@@ -25,6 +25,25 @@ $wp_customize->add_setting(
 		'sanitize_callback' => 'wp_kses_post',
 	)
 );
+// Setting toggle section.
+$wp_customize->add_setting(
+	'frontpage_section_testimonial_toggle',
+	array(
+		'default'           => 0,
+		'sanitize_callback' => 'luzdelaluna_switch_sanitize',
+	)
+);
+
+$wp_customize->add_control(
+	new Luzdelaluna_Toggle_Switch_Custom_Control(
+		$wp_customize,
+		'frontpage_section_testimonial_toggle',
+		array(
+			'label'   => esc_html__( 'Show Testimonial Section', 'luzdelaluna' ),
+			'section' => 'frontpage_section_testimonial',
+		)
+	)
+);
 
 $wp_customize->add_control(
 	new WP_Customize_Control(

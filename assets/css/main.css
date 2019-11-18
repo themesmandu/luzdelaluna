@@ -40,12 +40,9 @@ a:link {
     cursor: pointer;
 }
 
-a:focus,
 a:active,
 .slick-arrow:active,
-.slick-arrow:focus,
-body.search-no-results input:active,
-body.search-no-results input:focus {
+body.search-no-results input:active {
     outline: none !important;
     box-shadow: none !important;
 }
@@ -601,11 +598,6 @@ section .sub-heading {
 
 .section-about .row-right {
     margin-top: 120px;
-}
-
-.section-about .column-right {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .section-about .section-heading,
@@ -2216,8 +2208,8 @@ section.widget p {
 .edd-success .card-body h5 {
     background: #fc0d1b;
     padding: 12px 25px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     color: #ffffff;
     display: inline-block;
 }

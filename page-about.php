@@ -21,13 +21,13 @@ get_header();
             <?php for ( $i = 1; $i <= 2; $i++ ) : ?>
             <div class="row">
                 <figure
-                    class="col-md-<?php echo ( 2 === $i ? '5' : '6' ); ?> column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
+                    class="col-lg-<?php echo ( 2 === $i ? '5 col-md-6' : '6 col-md-6' ); ?> column<?php echo ( 2 === $i ? '-right' : '' ); ?>">
                     <img
                         src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'about_image_' . $i ) ) ); ?>" />
                 </figure>
 
                 <div
-                    class="col-md-<?php echo ( 2 === $i ? '7' : '6' ); ?> col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
+                    class="col-lg-<?php echo ( 2 === $i ? '7 col-md-6' : '6 col-md-6' ); ?> col-content <?php echo ( 2 === $i ? 'col-right' : '' ); ?>">
                     <?php if ( get_theme_mod( 'about_subheading_' . $i ) ) : ?>
                     <?php if($i == 1) : ?>
                     <h6 class="clr-gold bold-5 sub-heading">

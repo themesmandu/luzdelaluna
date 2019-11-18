@@ -24,41 +24,52 @@ $credit = "
 	line-height:125%;
 	text-align:center;
 ";
+
+$header_img = edd_get_option( 'email_logo', '' );
 ?>
-															</div>
-														</td>
-                                                    </tr>
-                                                </table>
-                                                <!-- End Content -->
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- End Body -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="top">
-                                    <!-- Footer -->
-                                    <table border="0" cellpadding="10" cellspacing="0" width="600" id="template_footer" style="<?php echo $template_footer; ?>">
-                                        <tr>
-                                            <td valign="top">
-                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td colspan="2" valign="middle" id="credit" style="<?php echo $credit; ?>">
-                                                           <?php echo wpautop( wp_kses_post( wptexturize( apply_filters( 'edd_email_footer_text', '<a href="' . esc_url( home_url() ) . '">' . get_bloginfo( 'name' ) . '</a>' ) ) ) ); ?>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- End Footer -->
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </body>
+
+</div>
+</td>
+</tr>
+</table>
+<!-- End Content -->
+</td>
+</tr>
+</table>
+<!-- End Body -->
+</td>
+</tr>
+<tr>
+    <td align="center" valign="top">
+        <!-- Footer -->
+        <table border="0" cellpadding="10" cellspacing="0" width="600" id="template_footer"
+            style="<?php echo $template_footer; ?>">
+            <tr>
+                <td valign="top">
+                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                        <tr>
+                            <td colspan="2" valign="middle" id="credit" style="<?php echo $credit; ?>">
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                    <?php if( ! empty( $header_img ) ) : ?>
+                                    <div id="template_header_image">
+                                        <?php echo '<img src="' . esc_url( $header_img ) . '" alt="' . get_bloginfo( 'name' ) . '" />'; ?>
+                                    </div>
+                                    <?php endif; ?>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- End Footer -->
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+
 </html>
