@@ -46,7 +46,7 @@ $body_content_inner = "
 	color: #000000;
 	font-size:17px;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	line-height:150%;
 	text-align:left;
 ";
@@ -65,7 +65,7 @@ $heading    = EDD()->emails->get_heading();
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><?php echo get_bloginfo( 'name' ); ?></title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 	</head>
 	<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="<?php echo $body; ?>">
 		<div style="<?php echo $wrapper; ?>">
